@@ -1,3 +1,5 @@
+#pragma once
+
 void Mode_BCoeur()
 {
 digitalWrite(LED_1,HIGH);
