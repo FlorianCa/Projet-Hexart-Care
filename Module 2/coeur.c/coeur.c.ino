@@ -1,5 +1,5 @@
 #include "param.h"
-#include "cardio.h"
+//#include "coeur.h"
 int LED_1 = 2;
 int LED_2 = 3;
 int LED_3 = 4; 
@@ -9,24 +9,26 @@ int LED_6 = 7;
 int LED_7 = 8;
 int LED_8 = 9;
 int LED_9 = 10;
-int LED_MODE = 1;
-int LED_auchoix = 1 ;
+int LED_MODE = 3;
+int LED_auchoix = 1;
+
 
 void setup() {
-  pinMode(LED_1, OUTPUT);
-  pinMode(LED_2, OUTPUT);
-  pinMode(LED_3, OUTPUT);
-  pinMode(LED_4, OUTPUT);
-  pinMode(LED_5, OUTPUT);
-  pinMode(LED_6, OUTPUT);
-  pinMode(LED_7, OUTPUT);
-  pinMode(LED_8, OUTPUT);
-  pinMode(LED_9, OUTPUT);
+  Serial.begin(9600);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
 
 }
 
 void loop() {
-   switch(LED_MODE)
+   switch(LED_MODE){
       case 1 :
         Mode_BCoeur();
         break;
@@ -40,12 +42,11 @@ void loop() {
         Mode_auchoix();
         break;
       case 5 : 
-        Mode_chenille;
+        Mode_Chenille();
         break;
-      case 6 :
-        Mode_aleatoire;
-        break;
-      case 7 :
-        break;
-        
+/*      case 6 :
+        Mode_aleatoire();
+        break;*/
+      default: 
+      while(1);}
 }
