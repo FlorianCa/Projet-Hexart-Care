@@ -45,6 +45,7 @@ digitalWrite(7,HIGH);
 digitalWrite(8,LOW);
 digitalWrite(9,HIGH);
 digitalWrite(10,LOW);
+delay(857)
 }
 
 void Mode_1sur3()
@@ -68,6 +69,7 @@ digitalWrite(7,HIGH);
 digitalWrite(8,LOW);
 digitalWrite(9,HIGH);
 digitalWrite(10,HIGH);
+delay(857);
 }
 
  void Mode_auchoix()
