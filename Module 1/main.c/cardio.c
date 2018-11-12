@@ -2,12 +2,11 @@
 
 int calculPoul(int valeurActuelle, int valeurPrecedente, int tempsPrecedent)
 {
-
-  int valeurAct = valeurActuelle;
+  int valeurAct=valeurActuelle;
   int seuil = 650;
   long tempsDetection;
 
-  if(valeurActuelle>seuil)
+  if(valeurAct>seuil)
   {
     if(valeurPrecedente<=seuil)
     {
@@ -19,5 +18,5 @@ int calculPoul(int valeurActuelle, int valeurPrecedente, int tempsPrecedent)
       }
     }
   }
-  valeurPrecedente = valeurActuelle;
+  valeurPrecedente = valeurAct;
 }

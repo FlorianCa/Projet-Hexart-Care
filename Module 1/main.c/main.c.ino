@@ -11,7 +11,7 @@ void setup()
 void loop()
 {
   int poul;
-  int valeurActuelle = analogRead(0);
+  int valeurActuelle = 653; //analogRead(0);
 
   poul = calculPoul(valeurActuelle, valeurPrecedente, tempsPrecedent);
   
