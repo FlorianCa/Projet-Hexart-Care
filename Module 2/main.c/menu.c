@@ -1,46 +1,51 @@
-#include"menu.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "menu.h"
+#include "generationCode.h"
 
-int choix
+void choix()
 {
-    int a
+    int a;
     printf("Choix du mode\n");
-    printf(" 1 - Mode_BCoeur\n");
-    printf(" 2 - Mode_1sur2\n");
-    printf(" 3 - Mode_1sur3\n");
-    printf(" 4 - Mode_auchoix\n");
-    printf(" 5 - Mode_Chenille\n");
-    scanf(" Indiquez votre choix: %i\n");
+    printf(" 1 - Mode_bCoeur\n");
+    printf(" 2 - Mode_unSurDeux\n");
+    printf(" 3 - Mode_unSurTrois\n");
+    printf(" 4 - Mode_auChoix\n");
+    printf(" 5 - Mode_chenille\n");
+    printf("Indiquez votre choix\n");
+    scanf("%i", &a);
 
     switch (a)
     {
         case 1:
-        void Mode_BCoeur();
+        Mode_bCoeur();
 
         break;
 
         case 2:
-        void Mode_1sur2();
+        Mode_unSurDeux();
 
         break;
 
         case 3:
-        void Mode_1sur3();
+        Mode_unSurTrois();
 
         break;
 
         case 4:
-        void Mode_auchoix();
+        Mode_auChoix();
 
         break;
 
         case 5:
-        void Mode_Chenille();
+        Mode_chenille();
 
         break;
 
         default:
 
-        return 0;
+        return EXIT_SUCCESS
+        ;
 
     }
 
