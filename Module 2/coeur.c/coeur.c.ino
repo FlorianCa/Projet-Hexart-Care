@@ -15,18 +15,18 @@
 
 /*
 Initialization of the blinking mode
-LED_MODE 1 = BCoeur
-LED_MODE 2 = 1sur2
-LED_MODE 3 = 1sur3
+LED_MODE 1 = bCoeur
+LED_MODE 2 = unSurDeux
+LED_MODE 3 = unSurTrois
 LED_MODE 4 = auchoix
 LED_MODE 5 = Chenille
  */
 
-#define LED_MODE 1
+#define LED_MODE 6
 
 // Initialization of the choosen DELL for the "auchoix" mode. 
 
-#define LED_auchoix LED_5
+#define LED_auChoix LED_1
 
 //Those lines define pinmodes of the Arduino as outputs so each pinmode is associate with a DELL
 
@@ -49,20 +49,23 @@ void setup() {
 void loop() {
    switch(LED_MODE){
       case 1 :
-        Mode_BCoeur(); 
+        Mode_bCoeur(); 
         break;
       case 2 :
-        Mode_1sur2();
+        Mode_unSurDeux();
         break;
       case 3 :
-        Mode_1sur3(); 
+        Mode_unSurTrois(); 
         break;
       case 4 : 
-        Mode_auchoix();
+        Mode_auChoix();
         break;
       case 5 : 
-        Mode_Chenille();
+        Mode_chenille();
         break;
-      default: 
+      case 6 :
+        Mode_fade();
+        break;
+           default: 
         while(1);}
 }

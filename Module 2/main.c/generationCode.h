@@ -1,10 +1,10 @@
 #ifndef GENERATIONCODE
 #define GENERATIONCODE
 
-void Mode_BCoeur();
-void Mode_1sur2();
-void Mode_1sur3();
-void Mode_auchoix();
-void Mode_Chenille();
+void Mode_bCoeur();
+void Mode_unSurDeux();
+void Mode_unSurTrois();
+void Mode_auChoix();
+void Mode_chenille();
 
-#endif
+#endif // GENERATIONCODE

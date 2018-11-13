@@ -4,8 +4,10 @@
 
 //With this function, all the DELLs will be "HIGH" in the same time and "LOW".
 
+//The "digitalWrite" instruction allows the DELLs to be Lit up or trun off.
 
-void Mode_BCoeur()
+
+void Mode_bCoeur()
 {
     digitalWrite(LED_1,HIGH);
     digitalWrite(LED_2,HIGH);
@@ -20,7 +22,7 @@ void Mode_BCoeur()
 
 //We use this delay before we get the IR sensor, with this delay we've got approximately 70 heartbeats by minute.
    
-        delay(857); 
+        delay(428); 
 
     digitalWrite(LED_1,LOW);
     digitalWrite(LED_2,LOW);
@@ -32,13 +34,13 @@ void Mode_BCoeur()
     digitalWrite(LED_8,LOW);
     digitalWrite(LED_9,LOW);
     digitalWrite(LED_10,LOW);
-       delay(857);
+       delay(428);
 }
 
 
-//With the "1sur2" mode, the Arduino will lit just the half of the DELLs at every heartbeat.
+//With the "unSurDeux" mode, the Arduino will lit just the half of the DELLs at every heartbeat.
 
-void Mode_1sur2()
+void Mode_unSurDeux()
 {
     digitalWrite(LED_1,HIGH);
     digitalWrite(LED_2,LOW);
@@ -49,7 +51,7 @@ void Mode_1sur2()
     digitalWrite(LED_7,HIGH);
     digitalWrite(LED_8,LOW);
     digitalWrite(LED_9,HIGH);
-    digitalWrite(LED_1,LOW);
+    digitalWrite(LED_10,LOW);
         delay(857);
     digitalWrite(LED_1,LOW);
     digitalWrite(LED_2,HIGH);
@@ -64,12 +66,11 @@ void Mode_1sur2()
         delay(857);
 }
 
-<<<<<<< HEAD:Module 2/coeur.c/param.ino
 
-//With the "1sur3" mode, the Arduino will lit just one of three DELLs at every heartbeat.
+//With the "unSurTrois" mode, the Arduino will lit just one of three DELLs at every heartbeat.
 
 
-void Mode_1sur3()
+void Mode_unSurTrois()
 {
     digitalWrite(LED_1,HIGH);
     digitalWrite(LED_2,LOW);
@@ -81,30 +82,44 @@ void Mode_1sur3()
     digitalWrite(LED_8,LOW);
     digitalWrite(LED_9,LOW);
     digitalWrite(LED_10,HIGH);
-        delay(857);
+        delay(428);
     digitalWrite(LED_1,LOW);
     digitalWrite(LED_2,HIGH);
-    digitalWrite(LED_3,HIGH);
+    digitalWrite(LED_3,LOW);
     digitalWrite(LED_4,LOW);
     digitalWrite(LED_5,HIGH);
-    digitalWrite(LED_6,HIGH);
+    digitalWrite(LED_6,LOW);
     digitalWrite(LED_7,LOW);
     digitalWrite(LED_8,HIGH);
+    digitalWrite(LED_9,LOW);
+    digitalWrite(LED_10,LOW);
+        delay(428);
+    digitalWrite(LED_1,LOW);
+    digitalWrite(LED_2,LOW);
+    digitalWrite(LED_3,HIGH);
+    digitalWrite(LED_4,LOW);
+    digitalWrite(LED_5,LOW);
+    digitalWrite(LED_6,HIGH);
+    digitalWrite(LED_7,LOW);
+    digitalWrite(LED_8,LOW);
     digitalWrite(LED_9,HIGH);
     digitalWrite(LED_10,LOW);
-        delay(857);
+        delay(428);
 }
 
-//The "auchoix" mode, just the choosen DELL will be lit and no other.
+//The "auChoix" mode, just the choosen DELL will be lit and no other.
 
- void Mode_auchoix()
+ void Mode_auChoix()
 {
-  digitalWrite(LED_auchoix,HIGH);
+  digitalWrite(LED_auChoix,HIGH);
+  delay(200);
+  digitalWrite(LED_auChoix,LOW);
+  delay(200);
 }
 
-//The "Chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
+//The "chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
 
-void Mode_Chenille()
+void Mode_chenille()
 {
     digitalWrite(LED_1,HIGH);
         delay(200);
@@ -136,4 +151,39 @@ void Mode_Chenille()
     digitalWrite(LED_10,HIGH);
         delay(200);
     digitalWrite(LED_10,LOW);
+}
+
+void Mode_fade()
+{
+    digitalWrite(LED_1,HIGH);
+    digitalWrite(LED_2,HIGH);
+    digitalWrite(LED_3,HIGH);
+    digitalWrite(LED_4,HIGH);
+    digitalWrite(LED_5,HIGH);
+    digitalWrite(LED_6,HIGH);
+    digitalWrite(LED_7,HIGH);
+    digitalWrite(LED_8,HIGH);
+    digitalWrite(LED_9,HIGH);
+    digitalWrite(LED_10,HIGH);
+      delay(700);
+    digitalWrite(LED_1,LOW);
+      delay(700);
+    digitalWrite(LED_2,LOW);
+      delay(700);
+    digitalWrite(LED_3,LOW);
+      delay(700);
+    digitalWrite(LED_4,LOW);
+      delay(700);
+    digitalWrite(LED_5,LOW);
+      delay(700);
+    digitalWrite(LED_6,LOW);
+      delay(700);
+    digitalWrite(LED_7,LOW);
+      delay(700);
+    digitalWrite(LED_8,LOW);
+      delay(700);
+    digitalWrite(LED_9,LOW);
+      delay(700);
+    digitalWrite(LED_10,LOW);
+      delay(700);
 }
