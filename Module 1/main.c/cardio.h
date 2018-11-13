@@ -1,6 +1,7 @@
-#ifndef CARDIO_H_IN
-#define CARDIO_H_IN
-
-int calculPoul(int valeurActuelle, int valeurPrecedente, int tempsPrecedent);
-
-endef
+#ifndef CARDIO
+#define CARDIO
+int verifpouls( int valeurActuelle, int valeurSeuil);
+long ecartpouls(int tempsDetection, int tempsPrecedent);
+int verifmemepouls(int valeurPrecedente, int valeurSeuil);
+int verifinterference(int tempsDetection, int tempsPrecedent);
+#endif
