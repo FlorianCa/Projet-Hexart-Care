@@ -22,11 +22,11 @@ LED_MODE 4 = auchoix
 LED_MODE 5 = Chenille
  */
 
-#define LED_MODE 3
+#define LED_MODE 6
 
 // Initialization of the choosen DELL for the "auchoix" mode. 
 
-#define LED_auChoix LED_5
+#define LED_auChoix LED_1
 
 //Those lines define pinmodes of the Arduino as outputs so each pinmode is associate with a DELL
 
@@ -63,6 +63,9 @@ void loop() {
       case 5 : 
         Mode_chenille();
         break;
-      default: 
+      case 6 :
+        Mode_fade();
+        break;
+           default: 
         while(1);}
 }
