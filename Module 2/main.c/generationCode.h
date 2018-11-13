@@ -7,4 +7,4 @@ void Mode_1sur3();
 void Mode_auchoix();
 void Mode_Chenille();
 
-#endif
+#endif // GENERATIONCODE

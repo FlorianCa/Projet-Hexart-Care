@@ -1,7 +1,9 @@
 #include "generationCode.h"
 #include "menu.h"
 
- int main
+ int main()
  {
-     int choix
+     void choix(int a);
+     return 0;
  }
+

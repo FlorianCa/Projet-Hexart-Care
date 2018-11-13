@@ -1,6 +1,6 @@
 #include"menu.h"
 
-int choix
+void choix;
 {
     int a
     printf("Choix du mode\n");
@@ -9,7 +9,7 @@ int choix
     printf(" 3 - Mode_1sur3\n");
     printf(" 4 - Mode_auchoix\n");
     printf(" 5 - Mode_Chenille\n");
-    scanf(" Indiquez votre choix: %i\n");
+    scanf(" Indiquez votre choix: %i\n", &a);
 
     switch (a)
     {

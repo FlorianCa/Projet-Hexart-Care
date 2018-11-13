@@ -1,7 +1,7 @@
 #ifndef MENU
 #define MENU
 
-int choix();
+void choix();
 int a;
 void Mode_BCoeur();
 void Mode_1sur2();
