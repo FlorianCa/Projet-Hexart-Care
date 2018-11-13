@@ -49,7 +49,7 @@ void Mode_1sur2()
     digitalWrite(LED_7,HIGH);
     digitalWrite(LED_8,LOW);
     digitalWrite(LED_9,HIGH);
-    digitalWrite(LED_1,LOW);
+    digitalWrite(LED_10,LOW);
         delay(857);
     digitalWrite(LED_1,LOW);
     digitalWrite(LED_2,HIGH);
@@ -64,7 +64,6 @@ void Mode_1sur2()
         delay(857);
 }
 
-<<<<<<< HEAD:Module 2/coeur.c/param.ino
 
 //With the "1sur3" mode, the Arduino will lit just one of three DELLs at every heartbeat.
 
