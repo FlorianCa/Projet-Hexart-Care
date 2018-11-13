@@ -1,10 +1,11 @@
 #include "donnees.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-void lectureFichier()
+void lectureFichier(ListeDonnees *mesDonnees)
 {
-    int fpoul;
-    int ftemps;
+    int poul;
+    int temps;
 
     FILE* f1 = NULL;
     f1 = fopen("Battements.csv", "r");
@@ -12,11 +13,10 @@ void lectureFichier()
     {
         do
         {
-            fpoul = fgetc(f1);
-            ftemps = fgetc(f1);
-            printf("%c %c", fpoul, ftemps);
+            poul = fgetc(f1);
+            insertion(&mesDonnees, poul, temps);
 
-        }while(fpoul != EOF);
+        }while(poul != EOF);
 
         fclose(f1);
     }
@@ -25,10 +25,57 @@ void lectureFichier()
     printf("Fichier vide");
     }
 
+}
 
+ListeDonnees *initialisation()
+{
+    ListeDonnees *mesDonnees = malloc(sizeof(*mesDonnees));
+    Donnees *donnees = malloc(sizeof(*donnees));
 
+    if (mesDonnees == NULL || donnees == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
 
+    donnees->poul = 0;
+    donnees->temps = 0;
+    donnees->suivant = NULL;
+    donnees->precedent = NULL;
+    mesDonnees->debut = donnees;
+    mesDonnees->fin = donnees;
 
+    return mesDonnees;
+}
 
+void insertion(ListeDonnees *mesDonnees, int poul, int temps)
+{
+    Donnees *nouveau = malloc(sizeof(*nouveau));
+    if (mesDonnees == NULL || nouveau == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
 
+    nouveau->poul = poul;
+    nouveau->temps = temps;
+
+    nouveau->suivant = NULL;
+    nouveau->precedent = mesDonnees->fin;
+    mesDonnees->fin = nouveau;
+}
+
+void afficherListe(ListeDonnees *mesDonnees)
+{
+    if (mesDonnees == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    Donnees *actuel = mesDonnees->debut;
+
+    while (actuel != NULL)
+    {
+        printf("%d -> ", actuel->poul);
+        actuel = actuel->suivant;
+    }
+    printf("NULL\n");
 }

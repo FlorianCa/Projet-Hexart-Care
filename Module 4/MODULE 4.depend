@@ -27,11 +27,12 @@
 
 1542114861 source:d:\florian\documents\projet-hexart-care\module 4\actions.c
 
-1542119184 source:d:\florian\documents\projet-hexart-care\module 4\donnees.c
+1542125509 source:d:\florian\documents\projet-hexart-care\module 4\donnees.c
 	"donnees.h"
 	<stdio.h>
+	<stdlib.h>
 
-1542114861 source:d:\florian\documents\projet-hexart-care\module 4\main.c
+1542124737 source:d:\florian\documents\projet-hexart-care\module 4\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -39,13 +40,13 @@
 	"menu.h"
 	"action.h"
 
-1542118992 d:\florian\documents\projet-hexart-care\module 4\donnees.h
+1542123004 d:\florian\documents\projet-hexart-care\module 4\donnees.h
 
 1542115746 d:\florian\documents\projet-hexart-care\module 4\menu.h
 
 1542114861 d:\florian\documents\projet-hexart-care\module 4\action.h
 
-1542114861 source:d:\florian\documents\projet-hexart-care\module 4\menu.c
+1542125469 source:d:\florian\documents\projet-hexart-care\module 4\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

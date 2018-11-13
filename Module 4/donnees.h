@@ -18,7 +18,7 @@ typedef struct
 }ListeDonnees;
 
 
-void lectureFichier();
+void lectureFichier(ListeDonnees *mesDonnees);
 ListeDonnees *initialisation();
 void insertion(ListeDonnees *mesDonnees, int poul, int temps);
 
