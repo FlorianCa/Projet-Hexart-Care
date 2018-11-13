@@ -32,7 +32,7 @@ void Mode_auChoix();
     printf("Led au choix\n")
     scanf("%i",&LED_auChoix)
     fichier = fopen("param.h", "w+");
-    fputs("digitalWrite(LED_auChoix,HIGH)\n", fichier);
+    fputs("digitalWrite(LED_auChoix,HIGH)\n delay(200)\n digitalWrite(LED_auChoix,LOW)\n delay(200)\n", fichier);
     fclose(fichier);
 }
 
