@@ -4,8 +4,10 @@
 
 //With this function, all the DELLs will be "HIGH" in the same time and "LOW".
 
+//The "digitalWrite" instruction allows the DELLs to be Lit up or trun off.
 
-void Mode_BCoeur()
+
+void Mode_bCoeur()
 {
     digitalWrite(LED_1,HIGH);
     digitalWrite(LED_2,HIGH);
@@ -36,9 +38,9 @@ void Mode_BCoeur()
 }
 
 
-//With the "1sur2" mode, the Arduino will lit just the half of the DELLs at every heartbeat.
+//With the "unSurDeux" mode, the Arduino will lit just the half of the DELLs at every heartbeat.
 
-void Mode_1sur2()
+void Mode_unSurDeux()
 {
     digitalWrite(LED_1,HIGH);
     digitalWrite(LED_2,LOW);
@@ -65,10 +67,10 @@ void Mode_1sur2()
 }
 
 
-//With the "1sur3" mode, the Arduino will lit just one of three DELLs at every heartbeat.
+//With the "unSurTrois" mode, the Arduino will lit just one of three DELLs at every heartbeat.
 
 
-void Mode_1sur3()
+void Mode_unSurTrois()
 {
     digitalWrite(LED_1,HIGH);
     digitalWrite(LED_2,LOW);
@@ -94,16 +96,16 @@ void Mode_1sur3()
         delay(857);
 }
 
-//The "auchoix" mode, just the choosen DELL will be lit and no other.
+//The "auChoix" mode, just the choosen DELL will be lit and no other.
 
- void Mode_auchoix()
+ void Mode_auChoix()
 {
-  digitalWrite(LED_auchoix,HIGH);
+  digitalWrite(LED_auChoix,HIGH);
 }
 
-//The "Chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
+//The "chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
 
-void Mode_Chenille()
+void Mode_chenille()
 {
     digitalWrite(LED_1,HIGH);
         delay(200);
