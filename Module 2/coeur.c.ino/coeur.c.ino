@@ -33,7 +33,7 @@ void setup() {
 void loop() {
    switch(LED_MODE){
       case 1 :
-        Mode_BCoeur();
+        Mode_BCoeur(); //kawak
         break;
       case 2 :
         Mode_1sur2();
