@@ -1,5 +1,10 @@
 #include "param.h"
 
+//In this file, we can see two instructions "HIGH" and "LOW". It's for the DELLs, if it's "HIGH", the DELL will be lit and so if it's "LOW", The DELL won't be lit.
+
+//With this function, all the DELLs will be "HIGH" in the same time and "LOW".
+
+
 void Mode_BCoeur()
 {
     digitalWrite(LED_1,HIGH);
@@ -12,7 +17,11 @@ void Mode_BCoeur()
     digitalWrite(LED_8,HIGH);
     digitalWrite(LED_9,HIGH);
     digitalWrite(LED_10,HIGH);
-        delay(857);
+
+//We use this delay before we get the IR sensor, with this delay we've got approximately 70 heartbeats by minute.
+   
+        delay(857); 
+
     digitalWrite(LED_1,LOW);
     digitalWrite(LED_2,LOW);
     digitalWrite(LED_3,LOW);
@@ -25,6 +34,9 @@ void Mode_BCoeur()
     digitalWrite(LED_10,LOW);
        delay(857);
 }
+
+
+//With the "1sur2" mode, the Arduino will lit just the half of the DELLs at every heartbeat.
 
 void Mode_1sur2()
 {
@@ -52,6 +64,11 @@ void Mode_1sur2()
         delay(857);
 }
 
+<<<<<<< HEAD:Module 2/coeur.c/param.ino
+
+//With the "1sur3" mode, the Arduino will lit just one of three DELLs at every heartbeat.
+
+
 void Mode_1sur3()
 {
     digitalWrite(LED_1,HIGH);
@@ -78,10 +95,14 @@ void Mode_1sur3()
         delay(857);
 }
 
+//The "auchoix" mode, just the choosen DELL will be lit and no other.
+
  void Mode_auchoix()
 {
   digitalWrite(LED_auchoix,HIGH);
 }
+
+//The "Chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
 
 void Mode_Chenille()
 {
@@ -116,6 +137,3 @@ void Mode_Chenille()
         delay(200);
     digitalWrite(LED_10,LOW);
 }
-
-
-
