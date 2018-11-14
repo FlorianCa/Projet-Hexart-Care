@@ -5,29 +5,23 @@
 
 typedef struct Donnees
 {
-    char poul;
-    char temps;
+    int pouls;
+    int temps;
     struct Donnees *suivant;
     struct Donnees *precedent;
 
-}Donnees;
+}Donnees; //structure de donnée contenant le pouls et le temps associé, ainsi qu'un pointeur suivant et un pointeur précédent pour formé une liste doublement chainée
 
 typedef struct
 {
     Donnees *debut;
     Donnees *fin;
 
-}ListeDonnees;
+}ListeDonnees; //structure de la liste doublement chainée, avec deux pointeur de type Donnees, pointant vers la première et la dernière donnée
 
 
-void lectureFichier(ListeDonnees *mesDonnees);
-ListeDonnees *initialisation();
-void insertion(ListeDonnees *mesDonnees, int poul, int temps);
-
-
-
-
-
-
+void lectureFichier(ListeDonnees *MesDonnees); //prototype de la fonction de lecture
+ListeDonnees *initialisation(); //prototype de la fonction d'initialisation
+void insertion(ListeDonnees *MesDonnees, int pouls, int temps); //prototype de la fonction d'insertion
 
 #endif

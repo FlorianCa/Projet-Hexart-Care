@@ -2,10 +2,9 @@
 #include "menu.h"       //Inclue le fichier menu.h
 #include "action.h"     //Inclue le fichier action.h
 
-void menu()
-{
-    ListeDonnees* mesDonnees = initialisation();
 
+void menu(ListeDonnees *mesDonnees)
+{
 
     int choix;
 
@@ -22,11 +21,14 @@ void menu()
     printf(" Votre choix est ");
     scanf("%d", &choix);
 
+
+
     switch(choix)
     {
     case 1 :
-        lectureFichier(mesDonnees);
+
         afficherListe(mesDonnees); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+
         break;
     case 2 :
         //Appel fonction Afficher les donnees en ordre croissant/decroissant

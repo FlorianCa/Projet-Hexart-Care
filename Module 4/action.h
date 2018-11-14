@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void afficherListe(ListeDonnees *mesDonnees);
+void afficherListe(ListeDonnees *mesDonnees); //prototype de la fonction d'affichage
 
 #endif
