@@ -5,8 +5,8 @@
 
 typedef struct Donnees
 {
-    int poul;
-    int temps;
+    char poul;
+    char temps;
     struct Donnees *suivant;
     struct Donnees *precedent;
 
@@ -22,7 +22,7 @@ typedef struct
 
 void lectureFichier(ListeDonnees *mesDonnees);
 ListeDonnees *initialisation();
-void insertion(ListeDonnees *mesDonnees, int poul, int temps);
+void insertion(ListeDonnees *mesDonnees, char poul, char temps);
 
 
 

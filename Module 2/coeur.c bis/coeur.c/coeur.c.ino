@@ -30,7 +30,7 @@ LED_MODE 4 = auchoix
 LED_MODE 5 = Chenille
  */
 
-#define LED_MODE 3
+#define LED_MODE 6
 
 // Initialization of the choosen DELL for the "auchoix" mode. 
 
