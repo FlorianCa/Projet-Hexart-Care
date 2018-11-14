@@ -51,3 +51,19 @@
 	"menu.h"
 	"generationCode.h"
 
+1542185085 source:c:\users\cleme\documents\github\projet-hexart-care\module 2\main.c\generationcode.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"generationCode.h"
+
+1542185085 c:\users\cleme\documents\github\projet-hexart-care\module 2\main.c\menu.h
+
+1542192591 c:\users\cleme\documents\github\projet-hexart-care\module 2\main.c\generationcode.h
+
+1542192591 source:c:\users\cleme\documents\github\projet-hexart-care\module 2\main.c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"generationCode.h"
+	"menu.h"
+
