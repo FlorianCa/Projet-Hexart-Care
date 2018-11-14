@@ -9,6 +9,6 @@
 //Creation de la fonction main()
 int main()
 {
-    menu(); //Appel de la fonction menu()
+    menu();//Appel de la fonction menu
     return 0;
 }

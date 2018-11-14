@@ -8,6 +8,8 @@
 
 void menu()
 {
+    ListeDonnees* mesDonnees = initialisation();
+
     int choix;
 
     printf("----------------------------------------BIENVENUE----------------------------------------\n");
@@ -26,7 +28,8 @@ void menu()
     switch(choix)
     {
     case 1 :
-        //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+        lectureFichier(&mesDonnees);//Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+        afficherListe(&mesDonnees);
         break;
     case 2 :
         //Appel fonction Afficher les donnees en ordre croissant/decroissant
@@ -47,4 +50,5 @@ void menu()
         //Appel fonction quitter
         break;
     }
+
 }
