@@ -2,29 +2,19 @@
 
 void lectureFichier(ListeDonnees *mesDonnees)
 {
-    char poul;
-    char temps;
-    char tab[100][100];
+    int poul;
+    int temps;
 
     FILE* f1 = NULL;
     f1 = fopen("D:/Florian/Documents/Projet-Hexart-Care/Module 3/ConvertisseurSerialCSV/Battements.csv", "r");
     if(f1 != NULL)
     {
-        do
+        int poul, temps;
+        while(fscanf(f1, "%i ; %i", &poul, & temps) != EOF)
         {
+            insertion(&mesDonnees, poul, temps);
+        }
 
-            poul = fgetc(f1);
-            temps = fgetc(f1);
-
-            printf("%c", poul);
-            printf("%c", temps);
-
-            tab[1][1]=poul;
-            tab[1][2]=temps;
-
-            printf("%c", tab[1]);
-
-        }while(poul != EOF);
 
         fclose(f1);
     }
@@ -55,7 +45,7 @@ ListeDonnees *initialisation()
     return mesDonnees;
 }
 
-void insertion(ListeDonnees *mesDonnees, char poul, char temps)
+void insertion(ListeDonnees *mesDonnees, int poul, int temps)
 {
     Donnees *nouveau = malloc(sizeof(*nouveau));
     if (mesDonnees == NULL || nouveau == NULL)

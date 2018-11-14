@@ -22,7 +22,7 @@ typedef struct
 
 void lectureFichier(ListeDonnees *mesDonnees);
 ListeDonnees *initialisation();
-void insertion(ListeDonnees *mesDonnees, char poul, char temps);
+void insertion(ListeDonnees *mesDonnees, int poul, int temps);
 
 
 
