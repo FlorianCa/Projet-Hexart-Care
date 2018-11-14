@@ -18,7 +18,7 @@ void afficherListe(ListeDonnees *mesDonnees)
     printf("NULL\n");
 }
 
-ListeDonnees *division(ListeDonnees *mesDonnees)
+/* ListeDonnees *division(ListeDonnees *mesDonnees)
 {
 
     Donnees *pos = mesDonnees->debut;
@@ -40,4 +40,6 @@ void triRapide(ListeDonnees *mesDonnees)
 {
 
 }
+*/
+
 

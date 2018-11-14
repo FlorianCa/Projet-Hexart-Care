@@ -1,7 +1,3 @@
-#include <stdio.h>      //Inclue la bibliotheque stdio.h
-#include <stdlib.h>     //Inclue la bibliotheque stdlib.h
-#include <string.h>     //Inclue la bibliotheque string.h
-
 #include "donnees.h"    //Inclue le fichier données.h
 #include "menu.h"       //Inclue le fichier menu.h
 #include "action.h"     //Inclue le fichier action.h

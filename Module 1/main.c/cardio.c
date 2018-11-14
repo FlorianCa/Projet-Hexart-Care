@@ -1,36 +1,22 @@
 #include "cardio.h"
 
-int pouls;
-long ecart;
-int VMP;
-int VI;
-
-int verifpouls( int valeurActuelle, int valeurSeuil)
+int calculPoul(int valeurActuelle, int valeurPrecedente, int tempsPrecedent)
 {
-  if (valeurActuelle > valeurSeuil); 
+  int valeurAct=valeurActuelle;
+  int seuil = 650;
+  long tempsDetection;
+
+  if(valeurAct>seuil)
   {
-    pouls=1;
+    if(valeurPrecedente<=seuil)
+    {
+      tempsDetection = millis();
+      if(tempsDetection>(tempsPrecedent+200))
+      {
+        return ((1000.0 * 60.0)/(tempsDetection - tempsPrecedent));
+        tempsPrecedent = tempsDetection;
+      }
+    }
   }
-}
-
-long ecartpouls(int tempsDetection, int tempsPrecedent)
-{
-  ecart=tempsDetection - tempsPrecedent;
-}
-
-int verifmemepouls(int valeurPrecedente, int valeurSeuil)
-{
-  if (valeurPrecedente <= valeurSeuil) 
-  {
-    VMP=1;
-  }
-
-}
-
-int verifinterference(int tempsDetection, int tempsPrecedent)
-{
-  if (tempsDetection > (tempsPrecedent+2))
-  {
-    VI=1;
-  }
+  valeurPrecedente = valeurAct;
 }

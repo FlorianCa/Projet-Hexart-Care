@@ -30,19 +30,4 @@ void insertion(ListeDonnees *mesDonnees, int poul, int temps);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif

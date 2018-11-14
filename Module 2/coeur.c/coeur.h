@@ -1,11 +1,12 @@
-#ifndef MENU
-#define MENU
+#ifndef COEUR
+#define COEUR
 
-int a;
+//All the prototypes
+
 void Mode_bCoeur();
 void Mode_unSurDeux();
 void Mode_unSurTrois();
 void Mode_auChoix();
 void Mode_chenille();
-
-#endif // MENU
+void Mode_fade();
+#endif
