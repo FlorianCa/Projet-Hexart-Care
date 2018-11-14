@@ -12,7 +12,7 @@ void choix()
 
     int a;
 
-    // Viewing of the menu with all the possibilities in it
+    //Viewing of the menu with all the possibilities in it
 
     printf("-----------Choix du mode------------\n");
     printf(" 1 - Allumer toutes les Led.   \n");
@@ -27,37 +27,42 @@ void choix()
 
     switch (a)
     {
-        //if a = 1, it's the bCoeur mode so all the DELLs will be lit
+        //If a = 1, it's the bCoeur mode so all the LEDs will be lit
 
-        case 1: ;
+    case 1:
+        ;
         Mode_bCoeur();
         break;
 
-        //if a = 2, it's the unSurDeux mode. With this mode, the Arduino will lit just the half of the DELLs at every heartbeat.it
+        //If a = 2, it's the unSurDeux mode. With this mode, the Arduino will lit just the half of the LEDs at every heartbeat.
 
-        case 2:
+    case 2:
         Mode_unSurDeux();
 
         break;
 
-        //if a = 3, it's the unSurTrois mode.
+        //If a = 3, it's the unSurTrois mode. With this mode, the Arduino will lit just one of three LED at every heartbeat.
 
-        case 3:
-        Mode_unSurTrois(); // Selectionne le Mode_unSurTrois qui allume une Led sur trois.
-
-        break;
-
-        case 4:
-        Mode_auChoix(); // Selectionne le Mode_auChoix qui allume une Led au choix.
+    case 3:
+        Mode_unSurTrois();
 
         break;
 
-        case 5:
-        Mode_chenille(); // Selectionne le Mode_chenille qui allume les Led une à une.
+        //If a = 3, it's the "auChoix" mode so with that, just the choosen LED will be lit and no other.
+
+    case 4:
+        Mode_auChoix();
 
         break;
 
-        default:
+        //If a = 5 it's the "chenille" mode, it's a sort of queue, When one LED goes lit, the former LED goes off.
+
+    case 5:
+        Mode_chenille();
+
+        break;
+
+    default:
 
         return 0;
 

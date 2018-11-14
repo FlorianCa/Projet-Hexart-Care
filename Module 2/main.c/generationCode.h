@@ -1,7 +1,7 @@
 #ifndef GENERATIONCODE
 #define GENERATIONCODE
 
-//All the prototypes that we use in this program.
+//All the prototypes' functions that we use in this program.
 
 void Mode_bCoeur();
 void Mode_unSurDeux();
