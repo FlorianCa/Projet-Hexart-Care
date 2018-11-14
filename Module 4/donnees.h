@@ -1,7 +1,9 @@
 #ifndef DONNEE_H_INCLUDE
 #define DONNEE_H_INCLUDE
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct
+typedef struct Donnees
 {
     int poul;
     int temps;

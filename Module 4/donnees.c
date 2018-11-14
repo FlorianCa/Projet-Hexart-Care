@@ -1,6 +1,4 @@
 #include "donnees.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void lectureFichier(ListeDonnees *mesDonnees)
 {
@@ -63,19 +61,3 @@ void insertion(ListeDonnees *mesDonnees, int poul, int temps)
     mesDonnees->fin = nouveau;
 }
 
-void afficherListe(ListeDonnees *mesDonnees)
-{
-    if (mesDonnees == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
-
-    Donnees *actuel = mesDonnees->debut;
-
-    while (actuel != NULL)
-    {
-        printf("%d -> ", actuel->poul);
-        actuel = actuel->suivant;
-    }
-    printf("NULL\n");
-}
