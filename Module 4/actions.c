@@ -2,17 +2,16 @@
 #include "donnees.h"
 
 
-void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va parcourir la liste est afficher chaque donn�e
+void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va parcourir la liste est afficher chaque donnée
 {
     if (lDonnees == NULL)
     {
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-
     if(choixOrdre == 2)
     {
-        Donnees *actuel = lDonnees->debut; //d�fini un pointeur sur structure qui est �gal au d�but de la liste
+        Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
         while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
         {
             printf("pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps); //on afficher le pouls et le temps dans la structure actuelle
@@ -32,30 +31,6 @@ void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va par
     }
 
 }
-
-/*ListeDonnees *division(ListeDonnees *mesDonnees)
-{
-
-    Donnees pos = mesDonnees->debut;
-    int pivot = mesDonnees->debut->poul;
-
-    for(Donnees *i = mesDonnees->debut; i->suivant != mesDonnees->fin ; *i = *i->suivant)
-    {
-        if(i->poul < pivot)
-        {
-            pos->poul=i->poul;
-            pos=pos->suivant;
-            i->poul=pos->poul;
-            pos->poul=pivot;
-        }
-    }
-}
-
-void triRapide(ListeDonnees *mesDonnees)
-{
-
-}
-*/
 
 void triBulle(ListeDonnees *lDonnees, int choixTri)
 {
@@ -104,23 +79,123 @@ void triBulle(ListeDonnees *lDonnees, int choixTri)
     }
 }
 
-int recherche( ListeDonnees *rDonnees)
+int recherche(ListeDonnees *lDonnees, int valTemps)
 {
-    int valt;
+    Donnees *actuel = lDonnees->debut;
 
-    Donnees *actuel = rDonnees->debut;
-
-    printf("  Indiquez le temps de la prise de votre pouls:  \n");
-    scanf("%i",&valt);
-    printf(" La valeur de votre pouls est de:                \n");
     while(actuel != NULL)
     {
-        if(actuel->temps == valt)
+        if(actuel->temps == valTemps)
         {
             return actuel->pouls;
         }
+        else
+        {
+            return 0000;
+        }
         actuel = actuel->suivant;
     }
+}
+
+int parcourliste(ListeDonnees *lDonnees)
+{
+    int compt = 0;
+
+    if (lDonnees == NULL)
+    {
+        exit(EXIT_FAILURE); //quitte le programme si la liste est vide
+    }
+
+    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
+    while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+    {
+        compt++;
+        actuel = actuel->suivant; //on passe a la structure suivant de la liste
+    }
+    return compt;
+}
+
+int moyenne(ListeDonnees *lDonnees)
+{
+    int mint, maxt, numerateur = 0, denominateur = 0, resultat;
+    Donnees *structMin, *structMax;
+
+    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
+    while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+    {
+        printf("temps :%i\n", actuel->temps);
+        actuel = actuel->suivant; //on passe a la structure suivant de la liste
+    }
+
+    printf("Choisissez vos deux valeurs: \n");
+
+    scanf("%i", &mint );
+
+    scanf("%i", &maxt );
+
+    printf("1\n");
+
+    Donnees *actuel2 = lDonnees->debut;
+
+    printf("2\n");
+
+    while(actuel2 != NULL)
+    {
+        printf("3\n");
+        if(actuel2->temps == mint)
+        {
+            structMin = actuel2;
+            printf("Coucou\n");
+        }
+        else if(actuel2->temps == maxt)
+        {
+            structMax = actuel2;
+            printf("Salut\n");
+        }
+
+        actuel2 = actuel2->suivant;
+        printf("6\n");
+    }
+
+    printf("7\n");
+
+    Donnees *actuel3 = structMin;
+
+    printf("8\n");
+
+    for(actuel3; actuel3 != structMax; actuel3 = actuel3->suivant)
+    {
+        numerateur += actuel3->pouls;
+        denominateur ++;
+        printf("9\n");
+    }
+    return resultat = numerateur / denominateur;
+}
+
+void rechercheMM(ListeDonnees *lDonnees)
+{
+    int min, max, tempsMin, tempsMax;
+
+    Donnees *actuel = lDonnees->debut->suivant;
+
+    max = actuel->pouls;
+    min = actuel->pouls;
+
+    while(actuel != NULL)
+    {
+        if(actuel->pouls > max)
+        {
+            max = actuel->pouls;
+            tempsMax = actuel->temps;
+        }
+        else if(actuel->pouls < min)
+        {
+            min = actuel->pouls;
+            tempsMin = actuel->temps;
+        }
+        actuel = actuel->suivant;
+    }
+    printf("Le pouls min est %i a %i et le max est %i a %i\n", min, tempsMin, max, tempsMax);
 }
 
 
