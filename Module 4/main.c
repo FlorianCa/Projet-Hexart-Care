@@ -1,5 +1,3 @@
-#include <stdio.h>      //Inclue la bibliotheque stdio.h
-#include <stdlib.h>     //Inclue la bibliotheque stdlib.h
 #include <string.h>     //Inclue la bibliotheque
 
 #include "donnees.h"    //Inclue le fichier données.h
@@ -9,6 +7,10 @@
 //Creation de la fonction main()
 int main()
 {
-    menu();//Appel de la fonction menu
+    ListeDonnees* mesDonnees = initialisation(); //initialisation de la liste chainéd
+    lectureFichier(mesDonnees); //lecture du fichier, rentre les valeurs dans la liste
+
+    menu(mesDonnees);//Appel de la fonction menu
+
     return 0;
 }

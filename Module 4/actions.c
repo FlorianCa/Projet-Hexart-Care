@@ -1,21 +1,21 @@
 #include "action.h"
 #include "donnees.h"
 
-void afficherListe(ListeDonnees *mesDonnees)
+void afficherListe(ListeDonnees *lDonnees) //fonction qui va parcourir la liste est afficher chaque donnée
 {
-    if (mesDonnees == NULL)
+    if (lDonnees == NULL)
     {
-        exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-    Donnees *actuel = mesDonnees->debut;
+    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
 
-    while (actuel != NULL)
+    while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
     {
-        printf("%i -> ", actuel->poul);
-        actuel = actuel->suivant;
+        printf("pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps); //on afficher le pouls et le temps dans la structure actuelle
+        actuel = actuel->suivant; //on passe a la structure suivant de la liste
     }
-    printf("NULL\n");
+    printf("fin \n"); //pour dire qu'on a fini l'affichage
 }
 
 /*ListeDonnees *division(ListeDonnees *mesDonnees)
@@ -42,20 +42,20 @@ void triRapide(ListeDonnees *mesDonnees)
 }
 */
 
-void triBulle(ListeDonnees *mesDonnees)
+/*void triBulle(ListeDonnees *mesDonnees)
 {
     Donnees *i;
     int tempo;
 
     for(i = mesDonnees->debut; i != mesDonnees->fin; i = i->suivant)
     {
-        if(i->poul < i->suivant->poul)
+        if(i->pouls < i->suivant->pouls)
         {
-            tempo=i->suivant->poul;
-            i->suivant->poul=i->poul;
-            i->poul=tempo;
+            tempo=i->suivant->pouls;
+            i->suivant->pouls=i->pouls;
+            i->pouls=tempo;
         }
     }
 }
-
+*/
 
