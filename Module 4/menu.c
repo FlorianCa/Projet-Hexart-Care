@@ -1,29 +1,20 @@
-//Include the "donn�es.h" file.
+#include "donnees.h"    //Inclue le fichier données.h
+#include "menu.h"       //Inclue le fichier menu.h
+#include "action.h"     //Inclue le fichier action.h
 
-#include "donnees.h"
-
-//Include the "menu.h" file.
-
-#include "menu.h"
-
-//Include the "action.h" file.
-
-#include "action.h"
-
-//Initialization of the menu.
 
 void menu(ListeDonnees *mesDonnees)
 {
 
-    //Initialization of the three values that we're going to need during the choice.
-
     int choix;
     int choixTri = 0;
     int choixOrdre = 0;
+    int nb;
+    int valTemps;
+    int valPouls;
+    int moy;
 
-    //This is the command console interface.
-
-    printf("----------------------------------------BIENVENUE---------------------------------------\n");
+    printf("----------------------------------------BIENVENUE----------------------------------------\n");
     printf("                             DISPONIBLE -> 6 FONCTIONNALITES                            \n");
     printf("            1 -> Afficher les donnees dans l'ordre du fichier .csv                      \n");
     printf("            2 -> Afficher les donnees en ordre croissant/decroissant                    \n");
@@ -34,64 +25,61 @@ void menu(ListeDonnees *mesDonnees)
     printf("----------------------------------------------------------------------------------------\n");
     printf("                  FAITES VOTRE CHOIX PARMI LES FONCTIONNALITES PROPOSEES                \n");
     printf(" Votre choix est ");
-
-    //Here we scan the user's choice.
-
     scanf("%d", &choix);
-
-    //The choice is tested, and so according to the value the user wrote, it will take a certain way.
 
     switch(choix)
     {
-
-        //The 1st case, if the user prints 1 in the menu, we've got a function which print the data within the .csv file order.
-
     case 1 :
 
-        //Calling of the "Afficher les donn�es" function in the .csv file order.
-
-        afficherListe(mesDonnees, choixOrdre);
+        printf("Vous les vous afficher par ordre croissant : 1 ou decroissant : 2 ? ");
+        scanf("%i", &choixOrdre);
+        afficherListe(mesDonnees, choixOrdre); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
 
         break;
-
-        //The 2nd case, if the user print 2 in the menu, we've got a function which print the data in an increasing or decreasing order.
-
     case 2 :
-
-        //Ask the user if he wants to sort the data by time or by pulsations.
 
         printf("Vous les vous triez par pouls : 1 ou par temps : 2 ? ");
         scanf("%i", &choixTri);
-
-        //Ask the user if he wants to sort the data in an increasing or a decreasing order.
-
-        printf("vous les vous afficher par ordre croissant : 1 ou decroissant : 2 ? ");
+        printf("Vous les vous afficher par ordre croissant : 1 ou decroissant : 2 ? ");
         scanf("%i", &choixOrdre);
 
-        //Sorting function.
-
         triBulle(mesDonnees, choixTri);
-
-        //The function which shows the list depending on the order the user chose.
-
         afficherListe(mesDonnees, choixOrdre);
 
+        //Appel fonction Afficher les donnees en ordre croissant/decroissant
         break;
-
-        //The 3rd case, if the user print 3 in the menu, we've got a function which print the data in an increasing or decreasing order.
-
     case 3 :
 
-        printf("%i", recherche(mesDonnees)); //Appel fonction Rechercher et afficher les donnees pour un temps particulier
+        printf("Voici les valeurs de temps releve :\n");
+        Donnees *actuel = mesDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
+
+        while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+        {
+            printf("temps : %i\n", actuel->temps);
+            actuel = actuel->suivant; //on passe a la structure suivant de la liste
+
+        }
+
+        printf("Indiquez le temps de la prise de votre pouls: \n");
+        scanf("%i", &valTemps);
+
+        valPouls = recherche(mesDonnees, valTemps);
+
+        printf("La valeur de votre pouls est de:%i\n", valPouls);
 
         break;
     case 4 :
+        moy = moyenne(mesDonnees);
+        printf("La moyenne des pouls est de : %i\n", moy);
         //Appel fonction Afficher la moyenne du pouls dans une plage de temps donnee
         break;
     case 5 :
+        nb = parcourliste(mesDonnees);
+        printf("Il y a actuellement %i ligne(s)\n", nb);
         //Appel fonction Afficher le nombre de lignes de donnees actuellement en memoire
         break;
     case 6 :
+        rechercheMM(mesDonnees);
         //Appel fonction Rechercher et afficher les max/min de pouls
         break;
     case 7 :
