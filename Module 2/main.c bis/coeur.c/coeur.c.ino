@@ -2,6 +2,7 @@
 #include "param.h"
 
 int TabPinLed[10]={2,3,4,5,6,7,8,9,10,11};
+int TabPinLed_1[10]={11,10,9,8,7,6,5,4,3,2};
 int TabPinLed_2[5]={2,4,6,8,10};
 int TabPinLed_3[5]={3,5,7,9,11};
 int TabPinLed_4[4]={2,5,8,11};
@@ -76,6 +77,12 @@ void loop() {
         break;
       case 7:
         Mode_moitie();
+        break;
+      case 8:
+        Mode_chenillard();
+        break;
+      case 9:
+        Mode_allerRetour();
         break;
            default: 
         while(1);

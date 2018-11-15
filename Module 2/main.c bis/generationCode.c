@@ -81,5 +81,24 @@ void Mode_moitie() // fonction qui allume les Led en mode chenille
     }
 }
 
+void Mode_chenillard() // fonction qui allume les Led en mode chenille
+{
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+    {
+    fputs("#define LED_MODE 8", fichier);
+    fclose(fichier); // ferme le fichier "param.h"
+    }
+}
+
+void Mode_allerRetour() // fonction qui allume les Led en mode chenille
+{
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+    {
+    fputs("#define LED_MODE 9", fichier);
+    fclose(fichier); // ferme le fichier "param.h"
+    }
+}
 
 

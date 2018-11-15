@@ -77,6 +77,15 @@ void choix()
 
         break;
 
+    case 8:
+        Mode_chenillard();
+
+        break;
+
+    case 9:
+        Mode_allerRetour();
+
+        break;
 
     default:
 

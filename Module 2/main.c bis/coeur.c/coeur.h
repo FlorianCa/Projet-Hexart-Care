@@ -10,5 +10,7 @@ void Mode_auChoix();
 void Mode_chenille();
 void Mode_fade();
 void Mode_moitie();
+void Mode_chenillard();
+void Mode_allerRetour();
 
 #endif

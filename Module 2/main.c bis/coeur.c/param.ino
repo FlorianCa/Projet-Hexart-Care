@@ -80,7 +80,7 @@ void Mode_unSurTrois()
 
 //The "chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
 
-void Mode_chenille()
+void Mode_chenillard()
 {
     for (i=0; i<10; i++)
     {
@@ -100,11 +100,11 @@ void Mode_fade()
     {
       digitalWrite(TabPinLed[i],HIGH);
     }
-    delay(857);
+    delay(85);
     for (i=0; i<10; i++)
     {
       digitalWrite(TabPinLed[i],LOW);
-    delay(857);
+    delay(85);
     }
 }
 
@@ -121,5 +121,52 @@ void Mode_moitie()
       digitalWrite(TabPinLed_7[i],LOW);
       digitalWrite(TabPinLed_8[i],HIGH);
       delay(857);
+    }
+}
+void Mode_chenille()
+{
+    digitalWrite(LED_1,HIGH);
+        delay(85);
+    digitalWrite(LED_1,LOW);
+    digitalWrite(LED_2,HIGH);
+        delay(85);
+    digitalWrite(LED_2,LOW);
+    digitalWrite(LED_3,HIGH);
+        delay(85);
+    digitalWrite(LED_3,LOW);
+    digitalWrite(LED_4,HIGH);
+        delay(85);
+    digitalWrite(LED_4,LOW);
+    digitalWrite(LED_5,HIGH);
+        delay(85);
+    digitalWrite(LED_5,LOW);
+    digitalWrite(LED_6,HIGH);
+        delay(85);
+    digitalWrite(LED_6,LOW);
+    digitalWrite(LED_7,HIGH);
+        delay(85);
+    digitalWrite(LED_7,LOW);
+    digitalWrite(LED_8,HIGH);
+        delay(85);
+    digitalWrite(LED_8,LOW);
+    digitalWrite(LED_9,HIGH);
+        delay(85);
+    digitalWrite(LED_9,LOW);
+    digitalWrite(LED_10,HIGH);
+        delay(85);
+    digitalWrite(LED_10,LOW);
+}
+
+void Mode_allerRetour()
+{
+    for (i=0; i<10; i++)
+    {
+      digitalWrite(TabPinLed[i],HIGH);   
+      delay(85);
+    }
+    for (i=0; i<10; i++)
+    {
+      digitalWrite(TabPinLed_1[i],LOW);
+      delay(85);
     }
 }

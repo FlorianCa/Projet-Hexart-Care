@@ -1,1 +1,1 @@
-#define LED_MODE 7
+#define LED_MODE 5
