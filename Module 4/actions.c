@@ -1,12 +1,14 @@
 #include "action.h"
 #include "donnees.h"
 
+
 void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va parcourir la liste est afficher chaque donnée
 {
     if (lDonnees == NULL)
     {
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
+
 
     if(choixOrdre == 2)
     {
@@ -99,6 +101,25 @@ void triBulle(ListeDonnees *lDonnees, int choixTri)
             }
             actuel2 = actuel2->precedent;
         }
+    }
+}
+
+int recherche( ListeDonnees *rDonnees)
+{
+    int valt;
+
+    Donnees *actuel = rDonnees->debut;
+
+    printf("  Indiquez le temps de la prise de votre pouls:  \n");
+    scanf("%i",&valt);
+    printf(" La valeur de votre pouls est de:                \n");
+    while(actuel != NULL)
+    {
+        if(actuel->temps == valt)
+        {
+            return actuel->pouls;
+        }
+        actuel = actuel->suivant;
     }
 }
 

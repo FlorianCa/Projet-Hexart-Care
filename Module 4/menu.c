@@ -1,4 +1,4 @@
-#include "donnees.h"    //Inclue le fichier données.h
+#include "donnees.h"    //Inclue le fichier donnÃ©es.h
 #include "menu.h"       //Inclue le fichier menu.h
 #include "action.h"     //Inclue le fichier action.h
 
@@ -9,7 +9,6 @@ void menu(ListeDonnees *mesDonnees)
     int choix;
     int choixTri = 0;
     int choixOrdre = 0;
-    int quitter = 0;
 
     printf("----------------------------------------BIENVENUE----------------------------------------\n");
     printf("                             DISPONIBLE -> 6 FONCTIONNALITES                            \n");
@@ -44,7 +43,9 @@ void menu(ListeDonnees *mesDonnees)
         //Appel fonction Afficher les donnees en ordre croissant/decroissant
         break;
     case 3 :
-        //Appel fonction Rechercher et afficher les donnees pour un temps particulier
+
+        printf("%i", recherche(mesDonnees)); //Appel fonction Rechercher et afficher les donnees pour un temps particulier
+
         break;
     case 4 :
         //Appel fonction Afficher la moyenne du pouls dans une plage de temps donnee

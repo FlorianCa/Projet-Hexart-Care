@@ -8,4 +8,6 @@ void afficherListe(ListeDonnees *lDonnees, int choixOrdre); //prototype de la fo
 void triBulle(ListeDonnees *lDonnees, int choixTri);
 
 
+int recherche(ListeDonnees *rDonnees); // prototype de la fonction de recherche
+
 #endif
