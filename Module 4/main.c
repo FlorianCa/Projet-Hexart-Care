@@ -1,16 +1,35 @@
-#include <string.h>     //Inclue la bibliotheque
+//Include the <string.h> library.
 
-#include "donnees.h"    //Inclue le fichier données.h
-#include "menu.h"       //Inclue le fichier menu.h
-#include "action.h"     //Inclue le fichier action.h
+#include <string.h>
 
-//Creation de la fonction main()
+//Include the "données.h" file.
+
+#include "donnees.h"
+
+//Include the "menu.h" file.
+
+#include "menu.h"
+
+//Include the "action.h" file.
+
+#include "action.h"
+
+//Creation of the "main()" function.
+
 int main()
 {
-    ListeDonnees* mesDonnees = initialisation(); //initialisation de la liste chainéd
-    lectureFichier(mesDonnees); //lecture du fichier, rentre les valeurs dans la liste
 
-    menu(mesDonnees);//Appel de la fonction menu
+    //Initialization of the chained list.
+
+    ListeDonnees* mesDonnees = initialisation();
+
+    //File reading which put the file's values in the list.
+
+    lectureFichier(mesDonnees);
+
+    //Calling the "menu" function.
+
+    menu(mesDonnees);
 
     return 0;
 }

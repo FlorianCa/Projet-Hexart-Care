@@ -1,14 +1,26 @@
-#include "donnees.h"    //Inclue le fichier données.h
-#include "menu.h"       //Inclue le fichier menu.h
-#include "action.h"     //Inclue le fichier action.h
 
+//Include the "données.h" file.
+
+#include "donnees.h"
+
+//Include the "menu.h" file.
+
+#include "menu.h"
+
+//Include the "action.h" file.
+
+#include "action.h"
+
+//Initialization of the menu.
 
 void menu(ListeDonnees *mesDonnees)
 {
 
     int choix;
 
-    printf("----------------------------------------BIENVENUE----------------------------------------\n");
+    //This is the command console interface
+
+    printf("----------------------------------------BIENVENUE---------------------------------------\n");
     printf("                             DISPONIBLE -> 6 FONCTIONNALITES                            \n");
     printf("            1 -> Afficher les donnees dans l'ordre du fichier .csv                      \n");
     printf("            2 -> Afficher les donnees en ordre croissant/decroissant                    \n");
