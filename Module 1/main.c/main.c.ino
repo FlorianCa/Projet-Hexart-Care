@@ -1,20 +1,42 @@
 #include "cardio.h"
 
-//  VARIABLES
-int CapteurPouls = 0;// Capteur Pouls connecté au Pin0
-int Coeur = 13; //  Controle LED Rouge
+//Initialization of the inconstant values.
 
-int TabPinLed[10]={2,3,4,5,6,7,8,9,10,11}; //Création d'un tableau de 10 valeurs où l'on a attribué les différents pin
+//Initialization of the pulse sensor connected with the 0pin.
+
+int CapteurPouls = 0;
+
+//Initialization of the circuit LED.
+
+int Coeur = 13;
+
+//Creation of a table with 10 values, each value is associate with a Pin on the Arduino
+
+int TabPinLed[10]={2,3,4,5,6,7,8,9,10,11}; 
+
+//Initialization of the count value for the "for" instruction in the "cardio" program.
+
 int i;
 
-double Signal; // Contient les données brutes et elles peuvent aller de 0 à 1023
-float ValeurSeuil = 2.5; // Permet de détecter quel battement choisir et lequel ignorer avec un seuil de 2.5 volt
+//Creation of a "Signal" inconstant value which contain the raw data, this value oscilliate between 0 and 1023.
+
+double Signal; 
+
+//Thanks to that value, we can detect which pulse we can consider or not with a step at 2.5 Volts.
+
+float ValeurSeuil = 2.5;
 
 
-// FONCTION SETUP
+// SETUP FUNCTION
 void setup() {
-   pinMode(Coeur,OUTPUT); // Fait en sorte que la LED clignote au rythme cardiaque
-   Serial.begin(9600);    
+
+   //Make the LED blink depending on the heartbeat.
+    
+   pinMode(Coeur,OUTPUT); 
+   Serial.begin(9600);
+   
+   //Each "pinMode" instruction associate a pin on the Arduino to an output.     
+   
    pinMode(2, OUTPUT);
    pinMode(3, OUTPUT);
    pinMode(4, OUTPUT);
@@ -27,14 +49,26 @@ void setup() {
    pinMode(11, OUTPUT);     
 }
 
-// FONCTION LOOP
+// LOOP FUNCTION 
 void loop() {
-   Signal = analogRead(CapteurPouls);  // Lit la valeur du pouls
-                                       // Et attribue la valeur à la variable signal
-                                      
-   Serial.print(Signal * 5 / 1023); //Affichage du signal converti en Volt
-   Serial.print(";"); //Affichage du ";"
-   Serial.println(millis()); //Affichage temps depuis lancement du programme
 
-   Mode_bCoeur(); //Appel fonction Mode_BCoeur
+   //Read the pulse value and associate the value to the inconstant value "signal".
+  
+   Signal = analogRead(CapteurPouls);  
+
+   //Printing of the signal converted in Volt.
+                                      
+   Serial.print(Signal * 5 / 1023); 
+
+   //Printing of ";"
+   
+   Serial.print(";");
+
+   //Display the time since the beginning of the program.
+   
+   Serial.println(millis()); 
+
+   //Calling the bCoeur function.
+
+   Mode_bCoeur();
 }

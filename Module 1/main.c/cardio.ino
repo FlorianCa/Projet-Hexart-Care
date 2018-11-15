@@ -1,15 +1,22 @@
-
-
 void Mode_bCoeur()
 {
-    if(Signal < ValeurSeuil) //Si le signal est inférieur à la valeur seuil alors la led s'allume
+
+  //If the signal is lower than the step value, the LED will blink.
+  
+  if(Signal < ValeurSeuil) 
     {
-        for (i=0; i<10; i++)
+      
+      //the "for" loope that will make blink all the LEDs.
+      
+      for (i=0; i<10; i++)
         {
             digitalWrite(TabPinLed[i],HIGH);
         }
     }
-    else // Sinon si le signal est supérieur à la valeur seuil alors la led s'éteint
+
+    //If the signal is upper than the step value, the LED will turns off 
+    
+    else 
     {
         for (i=0; i<10; i++)
         {

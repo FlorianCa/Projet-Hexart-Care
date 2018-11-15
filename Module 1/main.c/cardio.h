@@ -1,6 +1,8 @@
 #ifndef CARDIO
 #define CARDIO
 
-void Mode_bCoeur(); // Prototype
+//Prototype of the Mode_bCoeur function
+
+void Mode_bCoeur();
 
 #endif
