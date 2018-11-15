@@ -6,4 +6,6 @@
 
 void afficherListe(ListeDonnees *lDonnees); //prototype de la fonction d'affichage
 
+int recherche(ListeDonnees *rDonnees); // prototype de la fonction de recherche
+
 #endif
