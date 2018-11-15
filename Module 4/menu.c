@@ -7,6 +7,9 @@ void menu(ListeDonnees *mesDonnees)
 {
 
     int choix;
+    int choixTri = 0;
+    int choixOrdre = 0;
+    int quitter = 0;
 
     printf("----------------------------------------BIENVENUE----------------------------------------\n");
     printf("                             DISPONIBLE -> 6 FONCTIONNALITES                            \n");
@@ -21,16 +24,23 @@ void menu(ListeDonnees *mesDonnees)
     printf(" Votre choix est ");
     scanf("%d", &choix);
 
-
-
     switch(choix)
     {
     case 1 :
 
-        afficherListe(mesDonnees); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+        afficherListe(mesDonnees, choixOrdre); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
 
         break;
     case 2 :
+
+        printf("Vous les vous triez par pouls : 1 ou par temps : 2 ? ");
+        scanf("%i", &choixTri);
+        printf("vous les vous afficher par ordre croissant : 1 ou decroissant : 2 ? ");
+        scanf("%i", &choixOrdre);
+
+        triBulle(mesDonnees, choixTri);
+        afficherListe(mesDonnees, choixOrdre);
+
         //Appel fonction Afficher les donnees en ordre croissant/decroissant
         break;
     case 3 :
