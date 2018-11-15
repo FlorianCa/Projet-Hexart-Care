@@ -1,6 +1,6 @@
-#ifndef CARDIO_H_IN
-#define CARDIO_H_IN
+#ifndef CARDIO
+#define CARDIO
 
-int calculPoul(int valeurActuelle, int valeurPrecedente, int tempsPrecedent);
+void Mode_bCoeur(); // Prototype
 
-endef
+#endif
