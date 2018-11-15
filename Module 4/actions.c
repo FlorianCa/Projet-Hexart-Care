@@ -1,14 +1,14 @@
 #include "action.h"
 #include "donnees.h"
 
-void afficherListe(ListeDonnees *MesDonnees) //fonction qui va parcourir la liste est afficher chaque donnée
+void afficherListe(ListeDonnees *lDonnees) //fonction qui va parcourir la liste est afficher chaque donnée
 {
-    if (MesDonnees == NULL)
+    if (lDonnees == NULL)
     {
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-    Donnees *actuel = MesDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
+    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
 
     while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
     {
@@ -49,11 +49,11 @@ void triRapide(ListeDonnees *mesDonnees)
 
     for(i = mesDonnees->debut; i != mesDonnees->fin; i = i->suivant)
     {
-        if(i->poul < i->suivant->poul)
+        if(i->pouls < i->suivant->pouls)
         {
-            tempo=i->suivant->poul;
-            i->suivant->poul=i->poul;
-            i->poul=tempo;
+            tempo=i->suivant->pouls;
+            i->suivant->pouls=i->pouls;
+            i->pouls=tempo;
         }
     }
 }

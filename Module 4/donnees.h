@@ -20,8 +20,8 @@ typedef struct
 }ListeDonnees; //structure de la liste doublement chainée, avec deux pointeur de type Donnees, pointant vers la première et la dernière donnée
 
 
-void lectureFichier(ListeDonnees *MesDonnees); //prototype de la fonction de lecture
+void lectureFichier(ListeDonnees *lDonnees); //prototype de la fonction de lecture
 ListeDonnees *initialisation(); //prototype de la fonction d'initialisation
-void insertion(ListeDonnees *MesDonnees, int pouls, int temps); //prototype de la fonction d'insertion
+void insertion(ListeDonnees *lDonnees, int pouls, int temps); //prototype de la fonction d'insertion
 
 #endif
