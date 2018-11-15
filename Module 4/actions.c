@@ -1,14 +1,14 @@
 #include "action.h"
 #include "donnees.h"
 
-void afficherListe(ListeDonnees *lDonnees) //fonction qui va parcourir la liste est afficher chaque donnée
+void afficherListe(ListeDonnees *lDonnees) //fonction qui va parcourir la liste est afficher chaque donnÃ©e
 {
     if (lDonnees == NULL)
     {
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
+    Donnees *actuel = lDonnees->debut; //dÃ©fini un pointeur sur structure qui est Ã©gal au dÃ©but de la liste
 
     while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
     {
@@ -58,4 +58,26 @@ void triRapide(ListeDonnees *mesDonnees)
     }
 }
 */
+
+
+int recherche( ListeDonnees *rDonnees)
+{
+    int valt;
+
+    Donnees *actuel = rDonnees->debut;
+
+    printf("  Indiquez le temps de la prise de votre pouls:  \n");
+    scanf("%i",&valt);
+    printf(" La valeur de votre pouls est de:                \n");
+    while(actuel != NULL)
+    {
+        if(actuel->temps == valt)
+        {
+            return actuel->pouls;
+        }
+        actuel = actuel->suivant;
+    }
+}
+
+
 
