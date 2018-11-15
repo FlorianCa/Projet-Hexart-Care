@@ -1,4 +1,4 @@
-#include "action.h"
+#include "actions.h"
 #include "donnees.h"
 
 
@@ -89,10 +89,7 @@ int recherche(ListeDonnees *lDonnees, int valTemps)
         {
             return actuel->pouls;
         }
-        else
-        {
-            return 0000;
-        }
+
         actuel = actuel->suivant;
     }
 }

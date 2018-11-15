@@ -9,7 +9,7 @@ void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va par
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-    if(choixOrdre == 1)
+    if(choixOrdre == 2)
     {
         Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
         while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
