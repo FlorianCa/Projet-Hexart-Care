@@ -10,14 +10,14 @@ typedef struct Donnees
     struct Donnees *suivant;
     struct Donnees *precedent;
 
-}Donnees; //structure de donnÃ©e contenant le pouls et le temps associÃ©, ainsi qu'un pointeur suivant et un pointeur prÃ©cÃ©dent pour formÃ© une liste doublement chainÃ©e
+}Donnees; //structure de donnée contenant le pouls et le temps associé, ainsi qu'un pointeur suivant et un pointeur précédent pour formé une liste doublement chainée
 
 typedef struct
 {
     Donnees *debut;
     Donnees *fin;
 
-}ListeDonnees; //structure de la liste doublement chainÃ©e, avec deux pointeur de type Donnees, pointant vers la premiÃ¨re et la derniÃ¨re donnÃ©e
+}ListeDonnees; //structure de la liste doublement chainée, avec deux pointeur de type Donnees, pointant vers la première et la dernière donnée
 
 
 void lectureFichier(ListeDonnees *lDonnees); //prototype de la fonction de lecture

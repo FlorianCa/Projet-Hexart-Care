@@ -2,16 +2,16 @@
 #include "donnees.h"
 
 
-void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va parcourir la liste est afficher chaque donnÃ©e
+void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va parcourir la liste est afficher chaque donnée
 {
     if (lDonnees == NULL)
     {
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-    if(choixOrdre == 2)
+    if(choixOrdre == 1)
     {
-        Donnees *actuel = lDonnees->debut; //dÃ©fini un pointeur sur structure qui est Ã©gal au dÃ©but de la liste
+        Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
         while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
         {
             printf("pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps); //on afficher le pouls et le temps dans la structure actuelle
@@ -106,7 +106,7 @@ int parcourliste(ListeDonnees *lDonnees)
         exit(EXIT_FAILURE); //quitte le programme si la liste est vide
     }
 
-    Donnees *actuel = lDonnees->debut; //dÃ©fini un pointeur sur structure qui est Ã©gal au dÃ©but de la liste
+    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
     while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
     {
         compt++;
@@ -120,7 +120,7 @@ int moyenne(ListeDonnees *lDonnees)
     int mint, maxt, numerateur = 0, denominateur = 0, resultat;
     Donnees *structMin, *structMax;
 
-    Donnees *actuel = lDonnees->debut; //dÃ©fini un pointeur sur structure qui est Ã©gal au dÃ©but de la liste
+    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
     while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
     {
         printf("temps :%i\n", actuel->temps);
@@ -197,6 +197,3 @@ void rechercheMM(ListeDonnees *lDonnees)
     }
     printf("Le pouls min est %i a %i et le max est %i a %i\n", min, tempsMin, max, tempsMax);
 }
-
-
-
