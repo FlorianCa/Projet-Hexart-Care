@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+#include "donnees.h"    //Inclue le fichier donnÃ©es.h
+#include "menu.h"       //Inclue le fichier menu.h
+#include "action.h"     //Inclue le fichier action.h
+>>>>>>> 2886bdd2142acb238324ff60e9585d1791c4a6f6
 
 //Include the "données.h" file.
 
@@ -17,6 +23,8 @@ void menu(ListeDonnees *mesDonnees)
 {
 
     int choix;
+    int choixTri = 0;
+    int choixOrdre = 0;
 
     //This is the command console interface
 
@@ -33,20 +41,29 @@ void menu(ListeDonnees *mesDonnees)
     printf(" Votre choix est ");
     scanf("%d", &choix);
 
-
-
     switch(choix)
     {
     case 1 :
 
-        afficherListe(mesDonnees); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+        afficherListe(mesDonnees, choixOrdre); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
 
         break;
     case 2 :
+
+        printf("Vous les vous triez par pouls : 1 ou par temps : 2 ? ");
+        scanf("%i", &choixTri);
+        printf("vous les vous afficher par ordre croissant : 1 ou decroissant : 2 ? ");
+        scanf("%i", &choixOrdre);
+
+        triBulle(mesDonnees, choixTri);
+        afficherListe(mesDonnees, choixOrdre);
+
         //Appel fonction Afficher les donnees en ordre croissant/decroissant
         break;
     case 3 :
-        //Appel fonction Rechercher et afficher les donnees pour un temps particulier
+
+        printf("%i", recherche(mesDonnees)); //Appel fonction Rechercher et afficher les donnees pour un temps particulier
+
         break;
     case 4 :
         //Appel fonction Afficher la moyenne du pouls dans une plage de temps donnee
