@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-#include "donnees.h"    //Inclue le fichier donnÃ©es.h
-#include "menu.h"       //Inclue le fichier menu.h
-#include "action.h"     //Inclue le fichier action.h
->>>>>>> 2886bdd2142acb238324ff60e9585d1791c4a6f6
-
 //Include the "données.h" file.
 
 #include "donnees.h"
@@ -22,11 +15,13 @@
 void menu(ListeDonnees *mesDonnees)
 {
 
+    //Initialization of the three values that we're going to need during the choice.
+
     int choix;
     int choixTri = 0;
     int choixOrdre = 0;
 
-    //This is the command console interface
+    //This is the command console interface.
 
     printf("----------------------------------------BIENVENUE---------------------------------------\n");
     printf("                             DISPONIBLE -> 6 FONCTIONNALITES                            \n");
@@ -39,27 +34,52 @@ void menu(ListeDonnees *mesDonnees)
     printf("----------------------------------------------------------------------------------------\n");
     printf("                  FAITES VOTRE CHOIX PARMI LES FONCTIONNALITES PROPOSEES                \n");
     printf(" Votre choix est ");
+
+    //Here we scan the user's choice.
+
     scanf("%d", &choix);
+
+    //The choice is tested, and so according to the value the user wrote, it will take a certain way.
 
     switch(choix)
     {
+
+        //The 1st case, if the user prints 1 in the menu, we've got a function which print the data within the .csv file order.
+
     case 1 :
 
-        afficherListe(mesDonnees, choixOrdre); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+        //Calling of the "Afficher les données" function in the .csv file order.
+
+        afficherListe(mesDonnees, choixOrdre);
 
         break;
+
+        //The 2nd case, if the user print 2 in the menu, we've got a function which print the data in an increasing or decreasing order.
+
     case 2 :
+
+        //Ask the user if he wants to sort the data by time or by pulsations.
 
         printf("Vous les vous triez par pouls : 1 ou par temps : 2 ? ");
         scanf("%i", &choixTri);
+
+        //Ask the user if he wants to sort the data in an increasing or a decreasing order.
+
         printf("vous les vous afficher par ordre croissant : 1 ou decroissant : 2 ? ");
         scanf("%i", &choixOrdre);
 
+        //Sorting function.
+
         triBulle(mesDonnees, choixTri);
+
+        //The function which shows the list depending on the order the user chose.
+
         afficherListe(mesDonnees, choixOrdre);
 
-        //Appel fonction Afficher les donnees en ordre croissant/decroissant
         break;
+
+        //The 3rd case, if the user print 3 in the menu, we've got a function which print the data in an increasing or decreasing order.
+
     case 3 :
 
         printf("%i", recherche(mesDonnees)); //Appel fonction Rechercher et afficher les donnees pour un temps particulier
