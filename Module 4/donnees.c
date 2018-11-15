@@ -6,7 +6,7 @@ void lectureFichier(ListeDonnees *lDonnees) //va lire le fichier
     int temps; //déclaration de temps
 
     FILE* f1 = NULL; //déclaration du fichier comme NULL
-    f1 = fopen("D:/Florian/Documents/Projet-Hexart-Care/Module 3/ConvertisseurSerialCSV/Battements.csv", "r"); //ouverture du fichier, chemin a modifier selon ordi
+    f1 = fopen("D:/Florian/Projet-Hexart-Care/Module 3/ConvertisseurSerialCSV/Battements.csv", "r"); //ouverture du fichier, chemin a modifier selon ordi
     if(f1 != NULL) //pour vérifier que le fichier a bien été ouvert
     {
         while(fscanf(f1, "%i ; %i", &pouls, &temps) != EOF) // tant que le fscanf n'est pas arrivé a la fin du fichier, les valeurs luent avant et après le ; sont rentrées dans les variables
