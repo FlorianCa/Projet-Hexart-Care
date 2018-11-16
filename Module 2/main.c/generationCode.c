@@ -3,7 +3,7 @@
 #include "menu.h"
 #include "generationCode.h"
 
-int LED_auChoix;
+int ledChoix;
 FILE* fichier = NULL;
 
 //bCoeur function which lit all the LEDs at each heartbeat.
@@ -13,17 +13,20 @@ void Mode_bCoeur()
 
     //Open the "param.h" file.
 
-    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c/coeur.c/param.h", "w+");
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+
+    //Check if the file isn't empty or non-existent.
+
     if (fichier!=NULL)
     {
 
-        //Write the Mode_bCoeur's program in the "param.h" file.
+    //Write the Mode_bCoeur's program in the "param.h" file.
 
-        fputs("#define LED_1 2\n #define LED_2 3\n #define LED_3 4\n #define LED_4 5\n #define LED_5 6\n #define LED_6 7\n #define LED_7 8\n #define LED_8 9\n #define LED_9 10\n #define LED_10 11\n #define LED_MODE 1\n #define LED_auchoix LED_5\n void fonction(){ digitalWrite(LED_1,HIGH);\n digitalWrite(LED_2,HIGH);\n digitalWrite(LED_3,HIGH);\n digitalWrite(LED_4,HIGH);\n digitalWrite(LED_5,HIGH);\n digitalWrite(LED_6,HIGH);\n digitalWrite(LED_7,HIGH);\n digitalWrite(LED_8,HIGH);\n digitalWrite(LED_9,HIGH);\n digitalWrite(LED_10,HIGH);\n delay(857);\n digitalWrite(LED_1,LOW);\n digitalWrite(LED_2,LOW);\n digitalWrite(LED_3,LOW);\n digitalWrite(LED_4,LOW);\n digitalWrite(LED_5,LOW);\n digitalWrite(LED_6,LOW);\n digitalWrite(LED_7,LOW);\n digitalWrite(LED_8,LOW);\n digitalWrite(LED_10,LOW);\n delay(857); }\n", fichier);
+    fputs("#define LED_MODE 1", fichier);
 
-        //Close the "param.h" file.
+    //Close the "param.h" file.
 
-        fclose(fichier);
+    fclose(fichier);
     }
 }
 
@@ -34,72 +37,64 @@ void Mode_unSurDeux()
 
     //Open the "param.h" file.
 
-    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c/coeur.c/param.h", "w+");
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
 
-    //Verify if the file isn't empty or non-existent.
+    //Check if the file isn't empty or non-existent.
 
     if (fichier!=NULL)
     {
+    fputs("#define LED_MODE 2", fichier);
 
-        //Write the Mode_unSurDeux's program in the "param.h" file.
-        fputs("#define LED_1 2\n #define LED_2 3\n #define LED_3 4\n #define LED_4 5\n #define LED_5 6\n #define LED_6 7\n #define LED_7 8\n #define LED_8 9\n #define LED_9 10\n #define LED_10 11\n #define LED_MODE 1\n \n void fonction(){ digitalWrite(LED_1,HIGH);\n digitalWrite(LED_2,LOW);\n digitalWrite(LED_3,HIGH);\n digitalWrite(LED_4,LOW);\n digitalWrite(LED_5,HIGH);\n digitalWrite(LED_6,LOW);\n digitalWrite(LED_7,HIGH);\n digitalWrite(LED_8,LOW);\n digitalWrite(LED_9,HIGH);\n  digitalWrite(LED_10,LOW);\n delay(857);\n digitalWrite(LED_1,LOW);\n digitalWrite(LED_2,HIGH);\n digitalWrite(LED_3,LOW);\n digitalWrite(LED_4,HIGH);\n digitalWrite(LED_5,LOW);\n digitalWrite(LED_6,HIGH);\n digitalWrite(LED_7,LOW);\n digitalWrite(LED_8,HIGH);\n digitalWrite(LED_9,LOW);\n digitalWrite(LED_10,HIGH);\n delay(857); }\n", fichier);
+    //Close the "param.h" file.
 
-        //Close the "param.h" file.
-
-        fclose(fichier);
+    fclose(fichier);
     }
 }
 
 //unSurTrois function which lit third of the LEDs at each heartbeat.
 
 void Mode_unSurTrois()
-{
 
     //Open the "param.h" file.
 
-    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c/coeur.c/param.h", "w+");
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
 
-    //Verify if the file isn't empty or non-existent.
+    //Check if the file isn't empty or non-existent.
 
     if (fichier!=NULL)
-    {
 
-        //Write the Mode_unSurTrois' program in the "param.h" file.
+    fputs("#define LED_MODE 3", fichier);
 
-        fputs("#define LED_1 2\n #define LED_2 3\n #define LED_3 4\n #define LED_4 5\n #define LED_5 6\n #define LED_6 7\n #define LED_7 8\n #define LED_8 9\n #define LED_9 10\n #define LED_10 11\n #define LED_MODE 1\n  void fonction(){     digitalWrite(LED_1,HIGH);\n digitalWrite(LED_2,LOW);\n digitalWrite(LED_3,LOW);\n digitalWrite(LED_4,HIGH);\n digitalWrite(LED_5,LOW);\n digitalWrite(LED_6,LOW);\n digitalWrite(LED_7,HIGH);\n digitalWrite(LED_8,LOW);\n digitalWrite(LED_9,LOW);\n digitalWrite(LED_10,HIGH);\n delay(857);\n digitalWrite(LED_1,LOW);\n digitalWrite(LED_2,HIGH);\n digitalWrite(LED_3,LOW);\n digitalWrite(LED_4,LOW);\n digitalWrite(LED_5,HIGH);\n digitalWrite(LED_6,LOW);\n digitalWrite(LED_7,LOW);\n digitalWrite(LED_8,HIGH);\n digitalWrite(LED_9,LOW);\n digitalWrite(LED_10,LOW);\n delay(857);\n digitalWrite(LED_1,LOW);\n digitalWrite(LED_2,LOW);\n digitalWrite(LED_3,HIGH);\n digitalWrite(LED_4,LOW);\n digitalWrite(LED_5,LOW);\n digitalWrite(LED_6,HIGH);\n digitalWrite(LED_7,LOW);\n digitalWrite(LED_8,LOW);\n digitalWrite(LED_9,HIGH);\n digitalWrite(LED_10,LOW);\n delay(857); } \n", fichier);
+    //Close the "param.h" file.
 
-        //Close the "param.h" file.
-
-        fclose(fichier);
+    fclose(fichier);
     }
 }
 
 //auChoix mode which lit only a chosen LED.
 
-void Mode_auChoix()
+void Mode_auChoix() /
 {
 
-    //Asks the user the LED to lit.
+    //Asks the user the LED to make blink.
 
     printf("Led au choix;\n");
-    scanf("%i",&LED_auChoix);
+    scanf("%i",&ledChoix);
 
     //Open the "param.h" file.
 
-    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c/coeur.c/param.h", "w+");
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
 
-    //Verify if the file isn't empty or non-existent.
+    //Check if the file isn't empty or non-existent.
 
     if (fichier!=NULL)
     {
+    fputs("#define LED_MODE 4\n", fichier);
+    fputs("#define LED_auChoix ledChoix", fichier);
 
-        //Write the Mode_auChoix's program in the "param.h" file.
+    //Close the "param.h" file.
 
-        fputs("#define LED_1 2\n #define LED_2 3\n #define LED_3 4\n #define LED_4 5\n #define LED_5 6\n #define LED_6 7\n #define LED_7 8\n #define LED_8 9\n #define LED_9 10\n #define LED_10 11\n #define LED_MODE 1\n #define LED_auChoix LED_1 \n void fonction(){ digitalWrite(LED_auChoix,HIGH);\n delay(857);\n digitalWrite(LED_auChoix,LOW);\n delay(857);\n}", fichier);
-
-        //Close the "param.h" file.
-
-        fclose(fichier);
+    fclose(fichier);
     }
 }
 
@@ -110,19 +105,99 @@ void Mode_chenille()
 
     //Open the "param.h" file.
 
-    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c/coeur.c/param.h", "w+");
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
 
-    //Verify if the file isn't empty or non-existent.
+    //Check if the file isn't empty or non-existent.
 
     if (fichier!=NULL)
     {
+    fputs("#define LED_MODE 5", fichier);
 
-        //Write the Mode_chenille's program in the "param.h" file.
+    //Close the "param.h" file.
 
-        fputs("#define LED_1 2\n #define LED_2 3\n #define LED_3 4\n #define LED_4 5\n #define LED_5 6\n #define LED_6 7\n #define LED_7 8\n #define LED_8 9\n #define LED_9 10\n #define LED_10 11\n #define LED_MODE 1\n void fonction(){ digitalWrite(LED_1,HIGH);\n delay(200);\n digitalWrite(LED_1,LOW);\n digitalWrite(LED_2,HIGH);\n delay(200);\n digitalWrite(LED_2,LOW);\n digitalWrite(LED_3,HIGH);\n delay(200);\n digitalWrite(LED_3,LOW);\n digitalWrite(LED_4,HIGH);\n delay(200);\n digitalWrite(LED_4,LOW);\n digitalWrite(LED_5,HIGH);\n delay(200);\n digitalWrite(LED_5,LOW);\n digitalWrite(LED_6,HIGH);\n delay(200);\n digitalWrite(LED_6,LOW);\n digitalWrite(LED_7,HIGH);\n delay(200);\n digitalWrite(LED_7,LOW);\n digitalWrite(LED_8,HIGH);\n delay(200);\n digitalWrite(LED_8,LOW);\n digitalWrite(LED_9,HIGH);\n delay(200);\n digitalWrite(LED_9,LOW);\n digitalWrite(LED_10,HIGH);\n delay(200);\n digitalWrite(LED_10,LOW); }\n", fichier);
-
-        //Close the "param.h" file.
-
-        fclose(fichier);
+    fclose(fichier);
     }
 }
+
+//fade mode which turns off the LEDs one after the other.
+
+void Mode_fade() // fonction qui allume les Led en mode chenille
+{
+
+    //Open the "param.h" file.
+
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
+            {
+    fputs("#define LED_MODE 6", fichier);
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
+    }
+}
+
+//moitié mode it's the opposite of the "fade" mode.
+
+void Mode_moitie()
+{
+
+    //Open the "param.h" file.
+
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
+    {
+    fputs("#define LED_MODE 7", fichier);
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
+    }
+}
+
+//chenillard mode it's the opposite of the "fade" mode.
+
+void Mode_chenillard()
+{
+
+    //Open the "param.h" file.
+
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
+    {
+    fputs("#define LED_MODE 8", fichier);
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
+    }
+}
+
+//allerRetour mode, it's a mix between the "fade" and the "chenillard" mode
+
+void Mode_allerRetour()
+{
+
+    //Open the "param.h" file.
+
+    fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+    if (fichier!=NULL)
+    {
+    fputs("#define LED_MODE 9", fichier);
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
+    }
+}
+
+

@@ -1,10 +1,16 @@
 #ifndef COEUR
 #define COEUR
 
-void Mode_BCoeur();
-void Mode_1sur2();
-void Mode_1sur3();
-void Mode_auchoix();
-void Mode_Chenille();
+//All the prototypes
+
+void Mode_bCoeur();
+void Mode_unSurDeux();
+void Mode_unSurTrois();
+void Mode_auChoix();
+void Mode_chenille();
+void Mode_fade();
+void Mode_moitie();
+void Mode_chenillard();
+void Mode_allerRetour();
 
 #endif
