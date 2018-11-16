@@ -161,3 +161,30 @@
 	"donnees.h"
 	"menu.h"
 
+1542355895 source:c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\actions.c
+	"donnees.h"
+
+1542355895 c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\donnees.h
+	<stdio.h>
+	<stdlib.h>
+
+1542351815 source:c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\donnees.c
+	"donnees.h"
+
+1542355895 source:c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\main.c
+	<string.h>
+	"donnees.h"
+	"menu.h"
+	"actions.h"
+
+1542355895 c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\menu.h
+
+1542355895 c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\actions.h
+	"donnees.h"
+	<stdio.h>
+	<stdlib.h>
+
+1542355895 source:c:\users\kawak\documents\github\projet-hexart-care\module 4 de kawak avec nouvelle presentation console\menu.c
+	"donnees.h"
+	"menu.h"
+

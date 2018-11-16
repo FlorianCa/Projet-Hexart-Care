@@ -121,10 +121,16 @@ void menu(ListeDonnees *mesDonnees)
     case 7 :
         printf("                                  -------------------------------------------------\n");
         printf("                                                       Au revoir\n");
-        printf("                                  -------------------------------------------------\n");
+        printf("                                  -------------------------------------------------\n\n");
         exit(0);
         //Quitte le programme
         break;
+    default :
+        printf("                                  -------------------------------------------------\n");
+        printf("                                       Desole cette fonctionnalite n'existe pas\n");
+        printf("                                  -------------------------------------------------\n\n");
+
+
     }
 
 }

@@ -14,19 +14,23 @@ void menu()
 
     //Viewing of the menu with all the possibilities in it
 
-    printf("   ------------Choix du mode-----------\n");
-    printf("   | 1 - Allumer toutes les Led.      |\n");
-    printf("   | 2 - Allumer une Led sur deux.    |\n");
-    printf("   | 3 - Allumer une Led sur trois.   |\n");
-    printf("   | 4 - Allumer une Led au choix.    |\n");
-    printf("   | 5 - Allumer en mode chenille.    |\n");
-    printf("   | 6 - Allumer en mode fade.        |\n");
-    printf("   | 7 - Allumer en demi-chenille.    |\n");
-    printf("   | 8 - Allumer en mode chenillard.  |\n");
-    printf("   | 9 - Allumer en mode aller-retour.|\n");
-    printf("   ------------------------------------\n");
-
+    printf("              ----------------------------------------BIENVENUE----------------------------------------\n");
+    printf("                                           DISPONIBLE -> 6 MODES DE LEDS                               \n");
+    printf("                                       1 - Allumer toutes les Led.                                     \n");
+    printf("                                       2 - Allumer une Led sur deux.                                   \n");
+    printf("                                       3 - Allumer une Led sur trois.                                  \n");
+    printf("                                       4 - Allumer une Led au choix.                                   \n");
+    printf("                                       5 - Allumer en mode chenille.                                   \n");
+    printf("                                       6 - Allumer en mode fade.                                       \n");
+    printf("                                       7 - Allumer en demi-chenille.                                   \n");
+    printf("                                       8 - Allumer en mode chenillard.                                 \n");
+    printf("                                       9 - Allumer en mode aller-retour.                               \n");
+    printf("              ---------------------------------------------------------------------------------------- \n");
+    printf("                                FAITES VOTRE CHOIX PARMI LES FONCTIONNALITES PROPOSEES                 \n");
+    printf("              ---------------------------------------------------------------------------------------- \n\n");
+    printf("               Vous avez choisi ");
     scanf("%i", &choix);
+    printf("\n");
 
     //This switch will take in entry the value of "a" and the function will depend on this value.
 
@@ -35,7 +39,6 @@ void menu()
         //If a = 1, it's the bCoeur mode so all the LEDs will be lit
 
     case 1:
-        ;
         Mode_bCoeur();
         break;
 
@@ -90,8 +93,9 @@ void menu()
         break;
 
     default:
-
-        return 0;
+        printf("                                  -------------------------------------------------\n");
+        printf("                                              Desole ce mode n'existe pas\n");
+        printf("                                  -------------------------------------------------\n\n");
 
     }
 
