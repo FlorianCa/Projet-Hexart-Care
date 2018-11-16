@@ -1,6 +1,8 @@
 #ifndef MENU
 #define MENU
 
+//All the functions prototypes.
+
 void menu();
 void Mode_bCoeur();
 void Mode_unSurDeux();

@@ -6,98 +6,197 @@
 int ledChoix;
 FILE* fichier = NULL;
 
+//bCoeur function which lit all the LEDs at each heartbeat.
 
-void Mode_bCoeur() // fonction qui allume toutes les Led
+void Mode_bCoeur()
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
+
+    //Check if the file isn't empty or non-existent.
+
     if (fichier!=NULL)
     {
-    fputs("#define LED_MODE 1", fichier); // écrit dans le fichier "param.h" le programme du Mode_bCoeur
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Write the Mode_bCoeur's program in the "param.h" file.
+
+    fputs("#define LED_MODE 1", fichier);
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
-void Mode_unSurDeux() // fonction qui allume une Led sur deux
+//unSurDeux function which lit half of the LEDs at each heartbeat.
+
+void Mode_unSurDeux()
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
     {
     fputs("#define LED_MODE 2", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
+//unSurTrois function which lit third of the LEDs at each heartbeat.
 
-void Mode_unSurTrois()// fonction qui allume une Led sur trois
-{
+void Mode_unSurTrois()
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
-    {
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
+
     fputs("#define LED_MODE 3", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
-void Mode_auChoix() // fonction qui allume une Led choisit
+//auChoix mode which lit only a chosen LED.
+
+void Mode_auChoix() /
 {
-    printf("Led au choix;\n"); // demande la Led à l'utilisateur
-    scanf("%i",&ledChoix); // récuère la valeur entrée par l'utilisateur
+
+    //Asks the user the LED to make blink.
+
+    printf("Led au choix;\n");
+    scanf("%i",&ledChoix);
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
     {
     fputs("#define LED_MODE 4\n", fichier);
     fputs("#define LED_auChoix ledChoix", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
-void Mode_chenille() // fonction qui allume les Led en mode chenille
+//Chenille mode which lit up a LED and lit off the former LED
+
+void Mode_chenille()
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
     {
     fputs("#define LED_MODE 5", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
+
+//fade mode which turns off the LEDs one after the other.
 
 void Mode_fade() // fonction qui allume les Led en mode chenille
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
-    {
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
+            {
     fputs("#define LED_MODE 6", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
-void Mode_moitie() // fonction qui allume les Led en mode chenille
+//moitié mode it's the opposite of the "fade" mode.
+
+void Mode_moitie()
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
     {
     fputs("#define LED_MODE 7", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
-void Mode_chenillard() // fonction qui allume les Led en mode chenille
+//chenillard mode it's the opposite of the "fade" mode.
+
+void Mode_chenillard()
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+
+    //Check if the file isn't empty or non-existent.
+
+    if (fichier!=NULL)
     {
     fputs("#define LED_MODE 8", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 
-void Mode_allerRetour() // fonction qui allume les Led en mode chenille
+//allerRetour mode, it's a mix between the "fade" and the "chenillard" mode
+
+void Mode_allerRetour()
 {
+
+    //Open the "param.h" file.
+
     fichier = fopen("C:/Users/Quennehen/Documents/GitHub/Projet-Hexart-Care-branche-secondaire/Module 2/main.c bis/coeur.c/param.h", "w+"); // ouvre le fichier "param.h"
-    if (fichier!=NULL) // vérifie que le fichier n'est pas NULL
+    if (fichier!=NULL)
     {
     fputs("#define LED_MODE 9", fichier);
-    fclose(fichier); // ferme le fichier "param.h"
+
+    //Close the "param.h" file.
+
+    fclose(fichier);
     }
 }
 

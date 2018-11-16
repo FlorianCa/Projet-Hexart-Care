@@ -39,9 +39,7 @@ void Mode_unSurDeux()
         delay(857);
 }
 
-
 //With the "unSurTrois" mode, the Arduino will lit just one of three DELLs at every heartbeat.
-
 
 void Mode_unSurTrois()
 {
@@ -78,7 +76,7 @@ void Mode_unSurTrois()
   delay(428);
 }
 
-//The "chenille" mode is a sort of queue, When one DELL goes lit, the former DELL goes off. 
+//The "chenillard" mode, it's the opposite of the "fade" mode. 
 
 void Mode_chenillard()
 {
@@ -94,6 +92,8 @@ void Mode_chenillard()
     }
 }
 
+//It's the "fade" mode, at the start, all the LEDs are lit and they turn off one after the other.
+
 void Mode_fade()
 {
     for (i=0; i<10; i++)
@@ -107,6 +107,8 @@ void Mode_fade()
     delay(85);
     }
 }
+
+//It's the "moitié" mode, it's like a worm, half of LEDs are lit and whene the last LED goes off, a new LED goes lit.
 
 void Mode_moitie()
 {
@@ -123,6 +125,9 @@ void Mode_moitie()
       delay(857);
     }
 }
+
+//It's the "chenille" mode, it's a sort of queue, when a LED goes lit, the former LED goes off.
+
 void Mode_chenille()
 {
     digitalWrite(LED_1,HIGH);
@@ -156,6 +161,8 @@ void Mode_chenille()
         delay(85);
     digitalWrite(LED_10,LOW);
 }
+
+//It's the "allerRetour" mode, it's a mix between the "fade" and the "chenillard" mode
 
 void Mode_allerRetour()
 {

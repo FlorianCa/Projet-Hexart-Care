@@ -3,6 +3,8 @@
 #include "generationCode.h"
 #include "menu.h"
 
+//The main program, it just contains all the "#include", that's the foundation of the program.
+
  int main()
  {
      int quitter = 0;

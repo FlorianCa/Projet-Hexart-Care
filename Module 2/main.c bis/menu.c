@@ -77,20 +77,28 @@ void menu()
 
         break;
 
+        //If a = 7 it's the "moitié" mode, it's like a worm, half of LEDs are lit and whene the last LED goes off, a new LED goes lit.
+
     case 7:
         Mode_moitie();
 
         break;
+
+        //If a = 8 it's the "chenillard" mode, it's the opposite of the "fade" mode.
 
     case 8:
         Mode_chenillard();
 
         break;
 
+        //If a = 9 it's the "allerRetour" mode, it's a mix between the "fade" and the "chenillard" mode
+
     case 9:
         Mode_allerRetour();
 
         break;
+
+        //That's defensive programmation, if the user prints any other things on the command console, it prints that the selected mode didn't exist.
 
     default:
         printf("                                  -------------------------------------------------\n");
