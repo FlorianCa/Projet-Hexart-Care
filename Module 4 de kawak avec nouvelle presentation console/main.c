@@ -1,20 +1,35 @@
-#include <string.h>     //Inclue la bibliotheque
-#include "donnees.h"    //Inclue le fichier données.h
-#include "menu.h"       //Inclue le fichier menu.h
-#include "actions.h"     //Inclue le fichier action.h
+#include <string.h>
+#include "donnees.h"
+#include "menu.h"
+#include "actions.h"
 
-//Creation de la fonction main()
+//Creation of the main() function
+
 int main()
 {
+
+    //Initialization of a variable which will determine if the user wants to launch the program again or not.
+
     int quitter = 0;
 
-    ListeDonnees* mesDonnees = initialisation(); //initialisation de la liste chainéd
-    lectureFichier(mesDonnees); //lecture du fichier, rentre les valeurs dans la liste
+    //Initialization of the chained list.
+
+    ListeDonnees* mesDonnees = initialisation();
+
+    //Reading of the file, puts the values within the list.
+
+    lectureFichier(mesDonnees);
 
     while(quitter == 0 )
     {
+
+        //Cleans the console after an utilization.
+
         system("CLS");
-        menu(mesDonnees);//Appel de la fonction menu
+
+        //Calling the menu function.
+
+        menu(mesDonnees);
         printf("              Veuillez selectionner votre decision : \n");
         printf("              Continuer   --> 0\n");
         printf("              Quitter     --> 1\n\n");

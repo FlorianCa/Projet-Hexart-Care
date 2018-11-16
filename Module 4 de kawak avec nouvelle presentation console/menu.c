@@ -1,10 +1,10 @@
-#include "donnees.h"    //Inclue le fichier données.h
-#include "menu.h"       //Inclue le fichier menu.h
-   //Inclue le fichier action.h
-
+#include "donnees.h"
+#include "menu.h"
 
 void menu(ListeDonnees *mesDonnees)
 {
+
+    //Initialization of multiple inconstant values.
 
     int choix;
     int choixTri = 0;
@@ -13,6 +13,8 @@ void menu(ListeDonnees *mesDonnees)
     int valTemps;
     int valPouls;
     int moy;
+
+    //Console's graphical rendering
 
     printf("              ----------------------------------------BIENVENUE----------------------------------------\n");
     printf("                                           DISPONIBLE -> 6 FONCTIONNALITES                            \n");
@@ -30,6 +32,9 @@ void menu(ListeDonnees *mesDonnees)
     scanf("%d", &choix);
     printf("\n");
 
+
+    //The main switch, the way that switch take is determined by the user's choice.
+
     switch(choix)
     {
     case 1 :
@@ -43,7 +48,10 @@ void menu(ListeDonnees *mesDonnees)
         scanf("%i", &choixOrdre);
         printf("\n");
         printf("              ----------------------------------------------------------------------------------------\n\n");
-        afficherListe(mesDonnees, choixOrdre); //Appel fonction Afficher les donnees dans l'ordre du fichier .csv
+
+        //Calling the "afficher liste" function. It prints the data within the selected order.
+
+        afficherListe(mesDonnees, choixOrdre);
 
         break;
     case 2 :
@@ -66,23 +74,31 @@ void menu(ListeDonnees *mesDonnees)
         printf("\n");
         printf("              ----------------------------------------------------------------------------------------\n\n");
 
+        //Prints the sorted data, the sort is selected by the user.
         triBulle(mesDonnees, choixTri);
         afficherListe(mesDonnees, choixOrdre);
 
-        //Appel fonction Afficher les donnees en ordre croissant/decroissant
+
         break;
     case 3 :
 
         printf("              ----------------------------------------------------------------------------------------\n");
         printf("                                      Voici la liste complete des temps releve\n");
         printf("              ----------------------------------------------------------------------------------------\n\n");
-        Donnees *actuel = mesDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
 
-        while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+        //Define a structure pointer. It's equal to the start of the list.
+
+        Donnees *actuel = mesDonnees->debut;
+
+        //While this pointer ist NULL, the list's course continue.
+
+        while(actuel != NULL)
         {
             printf("                                                temps : %i\n", actuel->temps);
-            actuel = actuel->suivant; //on passe a la structure suivant de la liste
 
+            //Path to the structure following the list.
+
+            actuel = actuel->suivant;
 
         }
 
@@ -105,25 +121,33 @@ void menu(ListeDonnees *mesDonnees)
         printf("                                  -------------------------------------------------\n");
         printf("                                             La moyenne des pouls est de : %i\n", moy);
         printf("              ----------------------------------------------------------------------------------------\n\n");
-        //Appel fonction Afficher la moyenne du pouls dans une plage de temps donnee
+
+        //Calling the function that prints the average pulse in a time range.
+
         break;
     case 5 :
         nb = parcourliste(mesDonnees);
         printf("                                  -------------------------------------------------\n");
         printf("                                            Il y a actuellement %i ligne(s)\n", nb);
         printf("                                  -------------------------------------------------\n\n");
-        //Appel fonction Afficher le nombre de lignes de donnees actuellement en memoire
+
+        //Calling the function which prints the number of lines actually in memory.
+
         break;
     case 6 :
         rechercheMM(mesDonnees);
-        //Appel fonction Rechercher et afficher les max/min de pouls
+
+        //Calling the function which print the minimal and the maximal pulse
+
         break;
     case 7 :
         printf("                                  -------------------------------------------------\n");
         printf("                                                       Au revoir\n");
         printf("                                  -------------------------------------------------\n\n");
         exit(0);
-        //Quitte le programme
+
+        //Quit the program
+
         break;
     default :
         printf("                                  -------------------------------------------------\n");

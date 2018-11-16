@@ -1,64 +1,126 @@
 #include "donnees.h"
 
-void lectureFichier(ListeDonnees *lDonnees) //va lire le fichier
-{
-    int pouls; //déclaration de pouls
-    int temps; //déclaration de temps
+//Reading the file.
 
-    FILE* f1 = NULL; //déclaration du fichier comme NULL
-    f1 = fopen("Battements.csv", "r"); //ouverture du fichier, chemin a modifier selon ordi
-    if(f1 != NULL) //pour vérifier que le fichier a bien été ouvert
+void lectureFichier(ListeDonnees *lDonnees)
+{
+
+    //Initializations of thge pulse and the time.
+
+    int pouls;
+    int temps;
+
+    //Declare the file as NULL.
+
+    FILE* f1 = NULL;
+
+    //Opening the "Battements.csv" file.
+
+    f1 = fopen("Battements.csv", "r");
+
+    //Verify that the file is open.
+
+    if(f1 != NULL)
     {
-        while(fscanf(f1, "%i ; %i", &pouls, &temps) != EOF) // tant que le fscanf n'est pas arrivé a la fin du fichier, les valeurs luent avant et après le ; sont rentrées dans les variables
+
+        //While the fscanf isn't at the end of the file, the values are put in the inconstant values.
+
+        while(fscanf(f1, "%i ; %i", &pouls, &temps) != EOF)
         {
-            insertion(lDonnees, pouls, temps); //appel insertion afin d'entrée ces valeurs dans la liste
+
+            //Insertion call to puts those values in the list
+
+            insertion(lDonnees, pouls, temps);
         }
-        fclose(f1); //fermeture du fichier
+
+        //Closing the file.
+
+        fclose(f1);
     }
     else
     {
-    printf("Fichier vide \n"); //s'affiche si le fichier n'est pas corrrectment ouvert ou qu'il est vide
+
+        //prints only if the file is empty.
+
+    printf("Fichier vide \n");
     }
 }
 
-ListeDonnees *initialisation() //initialise la liste
+//Initialization of the list.
+
+ListeDonnees *initialisation()
 {
-    ListeDonnees *lDonnees = malloc(sizeof(*lDonnees)); //allocation dynamique pour la liste
-    Donnees *donnees = malloc(sizeof(*donnees)); //allocation dynamique pour la première donnée qui initialise la liste
+
+    //Dynamic allocation of memory for the list.
+
+    ListeDonnees *lDonnees = malloc(sizeof(*lDonnees));
+
+    //Dynamic allocation of memory for the first list's value.
+
+    Donnees *donnees = malloc(sizeof(*donnees));
 
     if (lDonnees == NULL || donnees == NULL)
     {
-        exit(EXIT_FAILURE); //si l'allocation dynamique a échoué, on quitte le programme
+
+        //Quitting the program if the malloc fail.
+
+        exit(EXIT_FAILURE);
     }
 
-    donnees->pouls = 0; //on attribue 0 au pouls de la donnée
-    donnees->temps = 0; //on attribue 0 au temps de la donnée
-    donnees->suivant = NULL; //le pointeur suivant ne pointe sur rien car il n'y a pas d'autre valeur dans la liste
-    donnees->precedent = NULL; //le pointeur suivant ne pointe sur rien car il n'y a pas d'autre valeur dans la liste
-    lDonnees->debut = donnees; //le début de la liste pointe vers l'unique donnée
-    lDonnees->fin = donnees; //la fin de la liste pointe vers l'unique donnée
+    //We associate the pulse and the time values with 0.
 
-    return lDonnees; //on renvoie la liste créé et initialisé
+    donnees->pouls = 0;
+    donnees->temps = 0;
+
+    //The pointers points on nothing because the list hasn't got other values.
+
+    donnees->suivant = NULL;
+    donnees->precedent = NULL;
+
+    //The start and the end of the list point to the unique data.
+
+    lDonnees->debut = donnees;
+    lDonnees->fin = donnees;
+
+    //We return the created list.
+
+    return lDonnees;
 }
 
-void insertion(ListeDonnees *lDonnees, int pouls, int temps) //permet d'insérer un nouvel élément en fin de liste
+//Enable to introduce a new element at the end of the list.
+
+void insertion(ListeDonnees *lDonnees, int pouls, int temps)
 {
-    Donnees *nouveau = malloc(sizeof(*nouveau)); //allocation dynamique pour le nouvel élément
+
+    //Dynamic allocation for the new element.
+
+    Donnees *nouveau = malloc(sizeof(*nouveau));
 
     if (lDonnees == NULL || nouveau == NULL)
     {
-        exit(EXIT_FAILURE); //si l'allocation dynamique a échoué, on quitte le programme
+
+        //Quitting the program if the malloc fail.
+
+        exit(EXIT_FAILURE);
     }
 
-    nouveau->pouls = pouls; //attribue le pouls récupéré au champ pouls de nouveau
-    nouveau->temps = temps; //attribue le temps récupéré au champ temps de temps
+    //Attribute the collected pulse/time values to the new fields.
 
-    lDonnees->fin->suivant = nouveau; //Fait pointer le champ suivant du dernier élément de la liste sur nouveau au lieu de NULL
+    nouveau->pouls = pouls;
+    nouveau->temps = temps;
 
-    nouveau->suivant = NULL; //fait pointer le champ suivant de nouveau sur NULL
-    nouveau->precedent = lDonnees->fin; //fait pointer le champ précédent de nouveau sur la fin de la liste
+    //Make point the next field of the last list element to the new one instead of NULL.
 
-    lDonnees->fin = nouveau; //défini la fin de la liste sur nouveau
-}
+    lDonnees->fin->suivant = nouveau;
 
+    //Make point the "nouveau" next field on NULL
+
+    nouveau->suivant = NULL;
+
+    //Make point the previous field of "nouveau"on the end of the list.
+    nouveau->precedent = lDonnees->fin;
+
+    //Define the end of the list on new.
+
+    lDonnees->fin = nouveau;
 
