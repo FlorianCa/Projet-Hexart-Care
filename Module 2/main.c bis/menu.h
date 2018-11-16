@@ -1,7 +1,7 @@
 #ifndef MENU
 #define MENU
 
-int a;
+void menu();
 void Mode_bCoeur();
 void Mode_unSurDeux();
 void Mode_unSurTrois();

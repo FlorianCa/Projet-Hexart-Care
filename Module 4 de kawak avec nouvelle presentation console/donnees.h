@@ -1,5 +1,5 @@
-#ifndef DONNEE_H_INCLUDE
-#define DONNEE_H_INCLUDE
+#ifndef DONNEE
+#define DONNEE
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,5 +1,4 @@
 #include <string.h>     //Inclue la bibliotheque
-
 #include "donnees.h"    //Inclue le fichier données.h
 #include "menu.h"       //Inclue le fichier menu.h
 #include "actions.h"     //Inclue le fichier action.h
@@ -14,6 +13,7 @@ int main()
 
     while(quitter == 0 )
     {
+        system("CLS");
         menu(mesDonnees);//Appel de la fonction menu
         printf("              Veuillez selectionner votre decision : \n");
         printf("              Continuer   --> 0\n");

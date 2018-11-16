@@ -1,5 +1,6 @@
-#ifndef ACTION_H_INCLUDE
-#define ACTION_H_INCLUDE
+#ifndef ACTION
+
+#define ACTION
 #include "donnees.h"
 #include <stdio.h>
 #include <stdlib.h>

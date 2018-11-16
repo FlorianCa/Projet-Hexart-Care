@@ -5,12 +5,12 @@
 
 // Main function of the menu, it initializes
 
-void choix()
+void menu()
 {
 
     //Initialization of the value "a", this value will be scan later for the user's choice
 
-    int a;
+    int choix;
 
     //Viewing of the menu with all the possibilities in it
 
@@ -22,13 +22,15 @@ void choix()
     printf("   | 5 - Allumer en mode chenille.    |\n");
     printf("   | 6 - Allumer en mode fade.        |\n");
     printf("   | 7 - Allumer en demi-chenille.    |\n");
+    printf("   | 8 - Allumer en mode chenillard.  |\n");
+    printf("   | 9 - Allumer en mode aller-retour.|\n");
     printf("   ------------------------------------\n");
 
-    scanf("%i", &a);
+    scanf("%i", &choix);
 
     //This switch will take in entry the value of "a" and the function will depend on this value.
 
-    switch (a)
+    switch (choix)
     {
         //If a = 1, it's the bCoeur mode so all the LEDs will be lit
 
