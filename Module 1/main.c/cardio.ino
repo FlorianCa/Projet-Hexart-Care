@@ -3,7 +3,7 @@ void Mode_bCoeur()
 
   //If the signal is lower than the step value, the LED will blink.
   
-  if(Signal < ValeurSeuil) 
+  if(Signal < valeurSeuil) 
     {
       
       //the "for" loope that will make blink all the LEDs.

@@ -4,11 +4,11 @@
 
 //Initialization of the pulse sensor connected with the 0pin.
 
-int CapteurPouls = 0;
+int capteurPouls = 0;
 
 //Initialization of the circuit LED.
 
-int Coeur = 13;
+int coeur = 13;
 
 //Creation of a table with 10 values, each value is associate with a Pin on the Arduino
 
@@ -20,11 +20,11 @@ int i;
 
 //Creation of a "Signal" inconstant value which contain the raw data, this value oscilliate between 0 and 1023.
 
-double Signal; 
+double Signal; //write with a capital letter because it is a command
 
 //Thanks to that value, we can detect which pulse we can consider or not with a step at 2.5 Volts.
 
-float ValeurSeuil = 2.5;
+float valeurSeuil = 2.5;
 
 
 // SETUP FUNCTION
@@ -32,7 +32,7 @@ void setup() {
 
    //Make the LED blink depending on the heartbeat.
     
-   pinMode(Coeur,OUTPUT); 
+   pinMode(coeur,OUTPUT); 
    Serial.begin(9600);
    
    //Each "pinMode" instruction associate a pin on the Arduino to an output.     
@@ -54,7 +54,7 @@ void loop() {
 
    //Read the pulse value and associate the value to the inconstant value "signal".
   
-   Signal = analogRead(CapteurPouls);  
+   Signal = analogRead(capteurPouls);  
 
    //Printing of the signal converted in Volt.
                                       
@@ -68,7 +68,7 @@ void loop() {
    
    Serial.println(millis()); 
 
-   //Calling the bCoeur function.
+   //Calling the bcoeur function.
 
    Mode_bCoeur();
 }

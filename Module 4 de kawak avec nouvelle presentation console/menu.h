@@ -1,6 +1,6 @@
-#ifndef MENU_H_INCLUDE
-#define MENU_H_INCLUDE
+#ifndef MENU
+#define MENU
 
 void menu(ListeDonnees *mesDonnees);
 
-#endif // MENU_H_INCLUDE
+#endif // MENU

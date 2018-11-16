@@ -36,8 +36,8 @@ void menu(ListeDonnees *mesDonnees)
 
         printf("              ----------------------------------------------------------------------------------------\n\n");
         printf("              Veuillez selectionner votre type d'affichage : \n");
-        printf("              Croissant   --> 1\n");
-        printf("              Decroissant --> 2\n\n");
+        printf("              Deroissant   --> 1\n");
+        printf("              Croissant    --> 2\n\n");
         printf("                                  -------------------------------------------------\n\n");
         printf("              Vous avez choisi ");
         scanf("%i", &choixOrdre);
@@ -121,10 +121,16 @@ void menu(ListeDonnees *mesDonnees)
     case 7 :
         printf("                                  -------------------------------------------------\n");
         printf("                                                       Au revoir\n");
-        printf("                                  -------------------------------------------------\n");
+        printf("                                  -------------------------------------------------\n\n");
         exit(0);
         //Quitte le programme
         break;
+    default :
+        printf("                                  -------------------------------------------------\n");
+        printf("                                       Desole cette fonctionnalite n'existe pas\n");
+        printf("                                  -------------------------------------------------\n\n");
+
+
     }
 
 }

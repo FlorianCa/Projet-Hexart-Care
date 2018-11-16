@@ -1,4 +1,3 @@
-
 #include "donnees.h"
 
 
@@ -186,6 +185,6 @@ void rechercheMM(ListeDonnees *lDonnees)
         actuel = actuel->suivant;
     }
     printf("                                  -------------------------------------------------\n");
-    printf("                                   Le pouls min est %i a %i et le max est %i a %i\n", min, tempsMin, max, tempsMax);
+    printf("                             Le pouls min est de %i pour %ims et le max est de %i pour %ims\n", min, tempsMin, max, tempsMax);
     printf("                                  -------------------------------------------------\n");
 }
