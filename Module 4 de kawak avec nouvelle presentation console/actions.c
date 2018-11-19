@@ -1,35 +1,63 @@
 #include "donnees.h"
 
 
-void afficherListe(ListeDonnees *lDonnees, int choixOrdre) //fonction qui va parcourir la liste est afficher chaque donnée
+//Function which gonna browse the list and prints every data.
+
+void afficherListe(ListeDonnees *lDonnees, int choixOrdre)
 {
     if (lDonnees == NULL)
     {
-        exit(EXIT_FAILURE); //quitte le programme si la liste est vide
+
+        //Quit the program if the list is empty.
+
+        exit(EXIT_FAILURE);
     }
 
     if(choixOrdre == 2)
     {
-        Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
-        while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+
+        //Define a pointer on structure equal to the start of the list
+
+        Donnees *actuel = lDonnees->debut;
+
+        //While this pointer isn't NULL, the list browsing continue.
+
+        while(actuel != NULL)
         {
-            printf("                                        pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps); //on afficher le pouls et le temps dans la structure actuelle
-            actuel = actuel->suivant; //on passe a la structure suivant de la liste
+
+            //Print the pulse and the time in the actual structure.
+
+            printf("                                        pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps);
+
+            //Path to the other structure of the list.
+
+            actuel = actuel->suivant;
         }
-        printf("                                        fin \n"); //pour dire qu'on a fini l'affichage
+        printf("                                        fin \n");
     }
     else
     {
         Donnees *actuel = lDonnees->fin;
-        while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+
+        //While this pointer isn't NULL, the list browsing continue.
+
+        while(actuel != NULL)
         {
-            printf("                                        pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps); //on afficher le pouls et le temps dans la structure actuelle
-            actuel = actuel->precedent; //on passe a la structure suivant de la liste
+
+            //Print the pulse and the time in the actual structure.
+
+            printf("                                        pouls -> %i temps -> %i \n", actuel->pouls, actuel->temps);
+
+            //Path to the other structure of the list.
+
+            actuel = actuel->precedent;
         }
-        printf("                                        fin \n"); //pour dire qu'on a fini l'affichage
+        printf("                                        fin \n");
     }
 
 }
+
+//Sorting algorithm. We use the Bubble sorting.
 
 void triBulle(ListeDonnees *lDonnees, int choixTri)
 {
@@ -78,6 +106,8 @@ void triBulle(ListeDonnees *lDonnees, int choixTri)
     }
 }
 
+//Our research algorithm
+
 int recherche(ListeDonnees *lDonnees, int valTemps)
 {
     Donnees *actuel = lDonnees->debut;
@@ -98,17 +128,30 @@ int parcourliste(ListeDonnees *lDonnees)
 
     if (lDonnees == NULL)
     {
-        exit(EXIT_FAILURE); //quitte le programme si la liste est vide
+
+        //Quit the program if the list is empty.
+
+        exit(EXIT_FAILURE);
     }
 
-    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
-    while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+    //Define a pointer of structure which is equal to the start of the list.
+
+    Donnees *actuel = lDonnees->debut;
+
+    //While this pointer isn't NULL, the list browsing continue.
+
+    while(actuel != NULL)
     {
         compt++;
-        actuel = actuel->suivant; //on passe a la structure suivant de la liste
+
+        //Path to the other structure of the list.
+
+        actuel = actuel->suivant;
     }
     return compt;
 }
+
+//This function find the average value.
 
 int moyenne(ListeDonnees *lDonnees)
 {
@@ -118,12 +161,23 @@ int moyenne(ListeDonnees *lDonnees)
     int mint, maxt, numerateur = 0, denominateur = 0, resultat;
     Donnees *structMin, *structMax;
 
-    Donnees *actuel = lDonnees->debut; //défini un pointeur sur structure qui est égal au début de la liste
-    while(actuel != NULL) //tant que ce pointeur n'est pas NULL, le parcour de la liste continu
+    //Define a pointer on structure which is equal to the start of the list.
+
+    Donnees *actuel = lDonnees->debut;
+
+    //While this pointer isn't NULL, the list browsing continue.
+
+    while(actuel != NULL)
+
     {
         printf("                                                temps :%i\n", actuel->temps);
-        actuel = actuel->suivant; //on passe a la structure suivant de la liste
+
+        //Path to the other structure of the list.
+
+        actuel = actuel->suivant;
     }
+
+    //Asks the user what minimal and maximal he wants.
 
     printf("              ----------------------------------------------------------------------------------------\n");
     printf("                                 Veuillez choisir vos deux valeurs\n");
@@ -160,6 +214,8 @@ int moyenne(ListeDonnees *lDonnees)
     }
     return resultat = numerateur / denominateur;
 }
+
+//This research function search the min pulse, time and the max pulse and time.
 
 void rechercheMM(ListeDonnees *lDonnees)
 {

@@ -5,7 +5,7 @@
 void lectureFichier(ListeDonnees *lDonnees)
 {
 
-    //Initializations of thge pulse and the time.
+    //Initializations of the pulse and the time.
 
     int pouls;
     int temps;

@@ -75,6 +75,7 @@ void menu(ListeDonnees *mesDonnees)
         printf("              ----------------------------------------------------------------------------------------\n\n");
 
         //Prints the sorted data, the sort is selected by the user.
+
         triBulle(mesDonnees, choixTri);
         afficherListe(mesDonnees, choixOrdre);
 

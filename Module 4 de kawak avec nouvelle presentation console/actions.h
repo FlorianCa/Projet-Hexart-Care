@@ -5,11 +5,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void afficherListe(ListeDonnees *lDonnees, int choixOrdre); //prototype de la fonction d'affichage
+//Prototype of the printing function.
+
+void afficherListe(ListeDonnees *lDonnees, int choixOrdre);
 void triBulle(ListeDonnees *lDonnees, int choixTri);
 
 
-int recherche(ListeDonnees *lDonnees, int valTemps); // prototype de la fonction de recherche
+//Prototype of the research function.
+
+int recherche(ListeDonnees *lDonnees, int valTemps);
 int parcourliste(ListeDonnees *lDonnees);
 int moyenne(ListeDonnees *mDonnees);
 void rechercheMM(ListeDonnees *lDonnees);
